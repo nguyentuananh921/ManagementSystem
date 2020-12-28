@@ -1,2 +1,7 @@
-# TimCorey
- Follow TimCorey to Learn
+# Management System 
+ Manage:
+ 
+ People 
+ Car
+ 
+ 
