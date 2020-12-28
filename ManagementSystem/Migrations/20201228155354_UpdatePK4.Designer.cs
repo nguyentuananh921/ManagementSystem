@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ManagementSystem.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201228093349_restart")]
-    partial class restart
+    [Migration("20201228155354_UpdatePK4")]
+    partial class UpdatePK4
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,36 @@ namespace ManagementSystem.Migrations
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
+
+            modelBuilder.Entity("CarCarDriver", b =>
+                {
+                    b.Property<int>("CarDriversPeopleID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CarHeDriveCarID")
+                        .HasColumnType("int");
+
+                    b.HasKey("CarDriversPeopleID", "CarHeDriveCarID");
+
+                    b.HasIndex("CarHeDriveCarID");
+
+                    b.ToTable("CarCarDriver");
+                });
+
+            modelBuilder.Entity("CarDriverPeople", b =>
+                {
+                    b.Property<int>("CarDriversPeopleID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PIDInforPeopleID")
+                        .HasColumnType("int");
+
+                    b.HasKey("CarDriversPeopleID", "PIDInforPeopleID");
+
+                    b.HasIndex("PIDInforPeopleID");
+
+                    b.ToTable("CarDriverPeople");
+                });
 
             modelBuilder.Entity("ManagementSystem.Models.Car", b =>
                 {
@@ -43,6 +73,12 @@ namespace ManagementSystem.Migrations
                     b.Property<int?>("CarModelID")
                         .HasColumnType("int");
 
+                    b.Property<string>("CarOwnerNote")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CarPlate")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("LocationCompanyID")
                         .HasColumnType("int");
 
@@ -55,11 +91,88 @@ namespace ManagementSystem.Migrations
                     b.Property<DateTime?>("LocationValidUntil")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("PeopleID")
+                        .HasColumnType("int");
+
                     b.HasKey("CarID");
 
                     b.HasIndex("CarModelID");
 
+                    b.HasIndex("LocationCompanyID");
+
+                    b.HasIndex("PeopleID");
+
                     b.ToTable("Cars");
+                });
+
+            modelBuilder.Entity("ManagementSystem.Models.CarDriver", b =>
+                {
+                    b.Property<int>("PeopleID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("CarID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DriverNote")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("PeopleID");
+
+                    b.ToTable("CarDrivers");
+                });
+
+            modelBuilder.Entity("ManagementSystem.Models.CarInspection", b =>
+                {
+                    b.Property<int>("CarInspectionID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int?>("CarID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CarInspectionImagePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CarInspectionValidUntil")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("InspectionDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("CarInspectionID");
+
+                    b.HasIndex("CarID");
+
+                    b.ToTable("CarInspections");
+                });
+
+            modelBuilder.Entity("ManagementSystem.Models.CarInsurance", b =>
+                {
+                    b.Property<int>("CarInsuranceID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("CarID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CarInsuranceDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CarInsuranceImagePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CarInsuranceValidUntil")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("CarInsuranceID");
+
+                    b.HasIndex("CarID");
+
+                    b.ToTable("CarInsurances");
                 });
 
             modelBuilder.Entity("ManagementSystem.Models.CarModel", b =>
@@ -87,6 +200,46 @@ namespace ManagementSystem.Migrations
                     b.HasKey("CarModelID");
 
                     b.ToTable("CarModels");
+                });
+
+            modelBuilder.Entity("ManagementSystem.Models.CarRegistration", b =>
+                {
+                    b.Property<int>("CarRegistrationID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime?>("CarDateRegistration")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("CarDateofFirstRegistration")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("CarID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CarPlate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CarPlateColor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CarRegistrationImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CarRegistrationNote")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("PeopleID")
+                        .HasColumnType("int");
+
+                    b.HasKey("CarRegistrationID");
+
+                    b.HasIndex("CarID");
+
+                    b.HasIndex("PeopleID");
+
+                    b.ToTable("CarRegistrations");
                 });
 
             modelBuilder.Entity("ManagementSystem.Models.Contact", b =>
@@ -143,12 +296,36 @@ namespace ManagementSystem.Migrations
                     b.ToTable("DriverLicences");
                 });
 
+            modelBuilder.Entity("ManagementSystem.Models.LocationCompany", b =>
+                {
+                    b.Property<int>("LocationCompanyID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("LocationCompanyLogoPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LocationCompanyName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LocationCompanyWeb")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("LocationCompanyID");
+
+                    b.ToTable("LocationCompanies");
+                });
+
             modelBuilder.Entity("ManagementSystem.Models.People", b =>
                 {
                     b.Property<int>("PeopleID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
+
+                    b.Property<DateTime?>("JoinDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("PeopleAddress")
                         .HasColumnType("nvarchar(max)");
@@ -386,11 +563,90 @@ namespace ManagementSystem.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("CarCarDriver", b =>
+                {
+                    b.HasOne("ManagementSystem.Models.CarDriver", null)
+                        .WithMany()
+                        .HasForeignKey("CarDriversPeopleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ManagementSystem.Models.Car", null)
+                        .WithMany()
+                        .HasForeignKey("CarHeDriveCarID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("CarDriverPeople", b =>
+                {
+                    b.HasOne("ManagementSystem.Models.CarDriver", null)
+                        .WithMany()
+                        .HasForeignKey("CarDriversPeopleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ManagementSystem.Models.People", null)
+                        .WithMany()
+                        .HasForeignKey("PIDInforPeopleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("ManagementSystem.Models.Car", b =>
                 {
-                    b.HasOne("ManagementSystem.Models.CarModel", null)
+                    b.HasOne("ManagementSystem.Models.CarModel", "CarModel")
                         .WithMany("Cars")
                         .HasForeignKey("CarModelID");
+
+                    b.HasOne("ManagementSystem.Models.LocationCompany", "LCompany")
+                        .WithMany("CarsLocate")
+                        .HasForeignKey("LocationCompanyID");
+
+                    b.HasOne("ManagementSystem.Models.People", "PIDInfor")
+                        .WithMany("CarOwner")
+                        .HasForeignKey("PeopleID");
+
+                    b.Navigation("CarModel");
+
+                    b.Navigation("LCompany");
+
+                    b.Navigation("PIDInfor");
+                });
+
+            modelBuilder.Entity("ManagementSystem.Models.CarInspection", b =>
+                {
+                    b.HasOne("ManagementSystem.Models.Car", "Cars")
+                        .WithMany()
+                        .HasForeignKey("CarID");
+
+                    b.Navigation("Cars");
+                });
+
+            modelBuilder.Entity("ManagementSystem.Models.CarInsurance", b =>
+                {
+                    b.HasOne("ManagementSystem.Models.Car", "Cars")
+                        .WithMany()
+                        .HasForeignKey("CarID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cars");
+                });
+
+            modelBuilder.Entity("ManagementSystem.Models.CarRegistration", b =>
+                {
+                    b.HasOne("ManagementSystem.Models.Car", "CarInfor")
+                        .WithMany("CarRegistrations")
+                        .HasForeignKey("CarID");
+
+                    b.HasOne("ManagementSystem.Models.People", "PIDInfor")
+                        .WithMany("CarRegistrations")
+                        .HasForeignKey("PeopleID");
+
+                    b.Navigation("CarInfor");
+
+                    b.Navigation("PIDInfor");
                 });
 
             modelBuilder.Entity("ManagementSystem.Models.Contact", b =>
@@ -464,13 +720,27 @@ namespace ManagementSystem.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("ManagementSystem.Models.Car", b =>
+                {
+                    b.Navigation("CarRegistrations");
+                });
+
             modelBuilder.Entity("ManagementSystem.Models.CarModel", b =>
                 {
                     b.Navigation("Cars");
                 });
 
+            modelBuilder.Entity("ManagementSystem.Models.LocationCompany", b =>
+                {
+                    b.Navigation("CarsLocate");
+                });
+
             modelBuilder.Entity("ManagementSystem.Models.People", b =>
                 {
+                    b.Navigation("CarOwner");
+
+                    b.Navigation("CarRegistrations");
+
                     b.Navigation("Contacts");
 
                     b.Navigation("DriverLicence");

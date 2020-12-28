@@ -56,6 +56,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     </div>
     <partial name="AdminLTE/_Scripts" />
-
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

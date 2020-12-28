@@ -12,9 +12,7 @@ namespace ManagementSystem.Models
 {
     public class Car
     {
-        [Key]
-        [Required]
-        [ForeignKey("LogicCar")]
+        [Key, Required]            
         public int CarID { get; set; }
 
         [ForeignKey("CarModel")]
@@ -33,7 +31,7 @@ namespace ManagementSystem.Models
         public string CarManufactureCountry { get; set; }
 
 
-        [ForeignKey("LocationCompany")]
+        [ForeignKey("LCompany")]
 
         public int? LocationCompanyID { get; set; }
 
@@ -50,21 +48,25 @@ namespace ManagementSystem.Models
         [Display(Name = "Ngày Hết hạn")]
         public DateTime? LocationValidUntil { get; set; }
 
-        //Relationship
-        //public LocationCompany LocationCompanys { get; set; }
-        [NotMapped]
-        //public ICollection<CarRegistration> CarRegistrations { get; set; }
+        [ForeignKey("PIDInfor")]
+        public int? PeopleID { get; set; }
+        public People PIDInfor { get; set; }
 
+        
+        [Display(Name = "Biển số")]
+        public string CarPlate { get; set; }
+        public string CarOwnerNote { get; set; }
+        //Relationship
+        public ICollection<CarRegistration> CarRegistrations { get; set; }
+
+        public LocationCompany LCompany { get; set; }
         //public ICollection<CarInsurance> CarInsurances { get; set; }
 
         //public ICollection<CarInspection> CarInspections { get; set; }
-        [ForeignKey("CarModel")]
-        public CarModel CarModel { get; set; }
 
-
-        //[NotMapped]
-        //Relationship to Carownners is one to one.
-        public CarOwner LogicCar { get; set; }
+        public CarModel CarModel { get; set; }     
+        public ICollection <CarDriver> CarDrivers { get; set; }
+       
 
     }
 }

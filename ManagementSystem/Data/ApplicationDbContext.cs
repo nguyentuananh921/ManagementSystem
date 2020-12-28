@@ -18,11 +18,11 @@ namespace ManagementSystem.Data
         public DbSet<CarModel> CarModels { get; set; }
         public DbSet<Car> Cars { get; set; }
         public DbSet<Contact> Contacts { get; set; }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<CarOwner>()
-                .HasKey(o => new { o.PeopleID, o.CarID, o.CarPlate });            
-        }
+        public DbSet<CarInsurance> CarInsurances { get; set; }
+        public DbSet<CarInspection> CarInspections { get; set; }
+        public DbSet<CarRegistration> CarRegistrations { get; set; }
+        public DbSet<CarDriver> CarDrivers { get; set; }
+        public DbSet<LocationCompany> LocationCompanies { get; set; }
 
     }
 }

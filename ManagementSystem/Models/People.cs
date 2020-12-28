@@ -16,7 +16,7 @@ namespace ManagementSystem.Models
     {
 
         [Key, Required]
-        [ForeignKey("Owners")]
+        //[ForeignKey("Owners")]
         public int PeopleID { get; set; }
 
         [Required, Display(Name = "Họ và Tên")]
@@ -54,6 +54,11 @@ namespace ManagementSystem.Models
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime? PeoplePIDValidUntil { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Ngày vào")]
+        public DateTime? JoinDate { get; set; }
+
         public string PeopleImagePath { get; set; }
 
         //Relationship
@@ -62,6 +67,11 @@ namespace ManagementSystem.Models
 
         public virtual DriverLicence DriverLicence { get; set; }
         public ICollection<Contact> Contacts { get; set; }
-        public ICollection<CarOwner> Owners { get; set; }
+        public ICollection<Car> CarOwner { get; set; }
+        public ICollection<CarRegistration> CarRegistrations { get; set; }
+
+        public ICollection<CarDriver> CarDrivers { get; set; }
+
+
     }
 }
