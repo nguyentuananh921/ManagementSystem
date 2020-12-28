@@ -1,0 +1,45 @@
+﻿@model ManagementSystem.Models.CarModel
+
+@{
+    ViewData["Title"] = "Chi tiết loại xe";
+}
+
+<h1>Chi tiết loại xe</h1>
+
+<div>
+    <h4>Loại xe</h4>
+    <hr />
+    <div class="row">
+        <div class="col-4">
+            <dl class="row">
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.CarModelVendor)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.CarModelVendor)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.CarModelModel)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.CarModelModel)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.CarModelNumberOfSeat)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.CarModelNumberOfSeat)
+                </dd>
+
+            </dl>
+        </div>
+        <div class="col-md-8">
+            <img src="@("~/img/CarModels/"+ Model.CarModelImageUrl)" asp-append-version="true" />
+        </div>
+    </div>
+
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CarModelID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
