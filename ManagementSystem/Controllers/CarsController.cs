@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ManagementSystem.Data;
 using ManagementSystem.Models;
+using ManagementSystem.Models.ViewModel;
 
 namespace ManagementSystem.Controllers
 {
@@ -20,11 +21,37 @@ namespace ManagementSystem.Controllers
         }
 
         // GET: Cars
+        //public async Task<IActionResult> Index()
+        //{
+        //    var applicationDbContext = _context.Cars.Include(c => c.CarModel).Include(c => c.PIDInfor).Include(c=>c.LocationCompanyID);
+        //    return View(await applicationDbContext.ToListAsync());
+        //}
+
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Cars.Include(c => c.CarModel).Include(c => c.PIDInfor).Include(c=>c.LocationCompanyID);
-            return View(await applicationDbContext.ToListAsync());
+            //var carvm = new ViewModelCar();
+            var carvm = await _context.Cars
+                                .Include( c => c.CarModel)
+                                .Include( c =>c.LCompany)
+                                .Include(c=>c.PIDInfor)
+                                .ToListAsync();
+            //var applicationDbContext = _context.Cars.Include(c => c.CarModel).Include(c => c.PIDInfor).Include(c => c.LocationCompanyID);
+            return View(carvm);
         }
+
+        //public async Task<IActionResult> CarDriver()
+        //{
+        //    //var carvm = new ViewModelCar();
+        //    var carvm = await _context.Cars
+        //                        .Include(c => c.CarModel)
+        //                        .Include(c => c.LCompany)
+        //                        .Include(c => c.PIDInfor)
+        //                        .Include (c=>c.)
+        //                        .ToListAsync();
+        //    //var applicationDbContext = _context.Cars.Include(c => c.CarModel).Include(c => c.PIDInfor).Include(c => c.LocationCompanyID);
+        //    return View(carvm);
+        //}
+
 
         // GET: Cars/Details/5
         public async Task<IActionResult> Details(int? id)

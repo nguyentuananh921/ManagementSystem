@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ManagementSystem.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201228155354_UpdatePK4")]
-    partial class UpdatePK4
+    [Migration("20201230080602_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,36 +20,6 @@ namespace ManagementSystem.Migrations
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
-
-            modelBuilder.Entity("CarCarDriver", b =>
-                {
-                    b.Property<int>("CarDriversPeopleID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CarHeDriveCarID")
-                        .HasColumnType("int");
-
-                    b.HasKey("CarDriversPeopleID", "CarHeDriveCarID");
-
-                    b.HasIndex("CarHeDriveCarID");
-
-                    b.ToTable("CarCarDriver");
-                });
-
-            modelBuilder.Entity("CarDriverPeople", b =>
-                {
-                    b.Property<int>("CarDriversPeopleID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PIDInforPeopleID")
-                        .HasColumnType("int");
-
-                    b.HasKey("CarDriversPeopleID", "PIDInforPeopleID");
-
-                    b.HasIndex("PIDInforPeopleID");
-
-                    b.ToTable("CarDriverPeople");
-                });
 
             modelBuilder.Entity("ManagementSystem.Models.Car", b =>
                 {
@@ -108,9 +78,7 @@ namespace ManagementSystem.Migrations
             modelBuilder.Entity("ManagementSystem.Models.CarDriver", b =>
                 {
                     b.Property<int>("PeopleID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("int");
 
                     b.Property<int>("CarID")
                         .HasColumnType("int");
@@ -118,7 +86,9 @@ namespace ManagementSystem.Migrations
                     b.Property<string>("DriverNote")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("PeopleID");
+                    b.HasKey("PeopleID", "CarID");
+
+                    b.HasIndex("CarID");
 
                     b.ToTable("CarDrivers");
                 });
@@ -563,36 +533,6 @@ namespace ManagementSystem.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("CarCarDriver", b =>
-                {
-                    b.HasOne("ManagementSystem.Models.CarDriver", null)
-                        .WithMany()
-                        .HasForeignKey("CarDriversPeopleID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ManagementSystem.Models.Car", null)
-                        .WithMany()
-                        .HasForeignKey("CarHeDriveCarID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("CarDriverPeople", b =>
-                {
-                    b.HasOne("ManagementSystem.Models.CarDriver", null)
-                        .WithMany()
-                        .HasForeignKey("CarDriversPeopleID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ManagementSystem.Models.People", null)
-                        .WithMany()
-                        .HasForeignKey("PIDInforPeopleID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("ManagementSystem.Models.Car", b =>
                 {
                     b.HasOne("ManagementSystem.Models.CarModel", "CarModel")
@@ -610,6 +550,25 @@ namespace ManagementSystem.Migrations
                     b.Navigation("CarModel");
 
                     b.Navigation("LCompany");
+
+                    b.Navigation("PIDInfor");
+                });
+
+            modelBuilder.Entity("ManagementSystem.Models.CarDriver", b =>
+                {
+                    b.HasOne("ManagementSystem.Models.Car", "CarInfor")
+                        .WithMany()
+                        .HasForeignKey("CarID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ManagementSystem.Models.People", "PIDInfor")
+                        .WithMany("CarDrivers")
+                        .HasForeignKey("PeopleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CarInfor");
 
                     b.Navigation("PIDInfor");
                 });
@@ -737,6 +696,8 @@ namespace ManagementSystem.Migrations
 
             modelBuilder.Entity("ManagementSystem.Models.People", b =>
                 {
+                    b.Navigation("CarDrivers");
+
                     b.Navigation("CarOwner");
 
                     b.Navigation("CarRegistrations");

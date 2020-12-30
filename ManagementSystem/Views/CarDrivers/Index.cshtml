@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ManagementSystem.Models.CarDriver>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table id="CarDriverTable" class="table table-striped table-bordered table-hover display nowrap" style="width:100%">
+    <thead>
+        <tr>
+            <th class="align-middle table-success">
+                @Html.DisplayNameFor(model => model.PIDInfor.PeopleName)
+            </th>
+            <th class="align-middle table-success">
+                @Html.DisplayNameFor(model => model.CarInfor.CarPlate)
+            </th>
+            <th class="align-middle table-success">
+                @Html.DisplayNameFor(model => model.DriverNote)
+            </th>
+            <th class="align-middle table-success"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.PIDInfor.PeopleName)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.CarInfor.CarPlate)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.DriverNote)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section scripts
+    {
+
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.jqueryui.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#CarDriverTable').DataTable
+                ({
+                    scrollX: true
+                });
+        }
+        );
+    </script>
+}

@@ -22,7 +22,14 @@ namespace ManagementSystem.Data
         public DbSet<CarInspection> CarInspections { get; set; }
         public DbSet<CarRegistration> CarRegistrations { get; set; }
         public DbSet<CarDriver> CarDrivers { get; set; }
-        public DbSet<LocationCompany> LocationCompanies { get; set; }
+        public DbSet<LocationCompany> LocationCompanies { get; set; }       
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<CarDriver>()
+                .HasKey(c => new { c.PeopleID, c.CarID });
+        }  
     }
 }
+

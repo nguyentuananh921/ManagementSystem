@@ -12,16 +12,16 @@ namespace ManagementSystem.Models
 {
     public class CarDriver
     {
-        [Key, Required]
-        int CarDriverID { get; set; }
-        [ForeignKey("CarHeDrive")]
-        public int CarID { get; set; }
-        public ICollection<Car> CarHeDrive { get; set; }
+        [ForeignKey("CarInfor")]
+        public int CarID { get; set; }        
 
-        [Key, ForeignKey("PIDInfor")]
+        [ForeignKey("PIDInfor")]
+
         public int PeopleID { get; set; }
-        public ICollection<People> PIDInfor { get; set; }
-
+        public People PIDInfor { get; set; }
+        //public DriverLicence DriverLicenceInfor { get; set; }
+        public Car CarInfor { get; set; }
+        [Display(Name = "Ghi Chú")]
         public string DriverNote { get; set; }
 
     }

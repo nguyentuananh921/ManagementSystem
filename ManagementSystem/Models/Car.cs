@@ -55,6 +55,8 @@ namespace ManagementSystem.Models
         
         [Display(Name = "Biển số")]
         public string CarPlate { get; set; }
+
+        [Display(Name = "Ghi Chú")]
         public string CarOwnerNote { get; set; }
         //Relationship
         public ICollection<CarRegistration> CarRegistrations { get; set; }
@@ -65,7 +67,7 @@ namespace ManagementSystem.Models
         //public ICollection<CarInspection> CarInspections { get; set; }
 
         public CarModel CarModel { get; set; }     
-        public ICollection <CarDriver> CarDrivers { get; set; }
+        //public ICollection <CarDriverAssignment> CarDriverAssignments { get; set; }
        
 
     }
