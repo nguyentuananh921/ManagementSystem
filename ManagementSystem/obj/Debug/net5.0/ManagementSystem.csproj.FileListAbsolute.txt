@@ -964,4 +964,4 @@ D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5
 D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarDrivers\Details.cshtml.g.cs
 D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarDrivers\Edit.cshtml.g.cs
 D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarDrivers\Index.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.csprojAssemblyReference.cache
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Peoples\PeopleContact.cshtml.g.cs

@@ -28,6 +28,13 @@ namespace ManagementSystem.Controllers
             return View(await _context.Peoples.ToListAsync());
         }
 
+        public async Task<IActionResult> PeopeleContact()
+        {
+            var peopleContactVM = _context.Peoples.Include(c => c.Contacts);
+                                
+            return View("PeopeleContact", await peopleContactVM.ToListAsync());
+        }
+
         // GET: Peoples/Details/5
         public async Task<IActionResult> Details(int? id)
         {

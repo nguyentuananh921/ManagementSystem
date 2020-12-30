@@ -38,19 +38,7 @@ namespace ManagementSystem.Controllers
             //var applicationDbContext = _context.Cars.Include(c => c.CarModel).Include(c => c.PIDInfor).Include(c => c.LocationCompanyID);
             return View(carvm);
         }
-
-        //public async Task<IActionResult> CarDriver()
-        //{
-        //    //var carvm = new ViewModelCar();
-        //    var carvm = await _context.Cars
-        //                        .Include(c => c.CarModel)
-        //                        .Include(c => c.LCompany)
-        //                        .Include(c => c.PIDInfor)
-        //                        .Include (c=>c.)
-        //                        .ToListAsync();
-        //    //var applicationDbContext = _context.Cars.Include(c => c.CarModel).Include(c => c.PIDInfor).Include(c => c.LocationCompanyID);
-        //    return View(carvm);
-        //}
+       
 
 
         // GET: Cars/Details/5
