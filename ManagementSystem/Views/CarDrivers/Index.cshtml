@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<ManagementSystem.Models.CarDriver>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Hồ sơ lái xe";
 }
 
-<h1>Index</h1>
+<h1>Danh sách lái xe</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,10 +13,36 @@
     <thead>
         <tr>
             <th class="align-middle table-success">
+                @Html.DisplayNameFor(model => model.CarInfor.CarPlate)
+            </th>
+
+            <th class="align-middle table-success">
                 @Html.DisplayNameFor(model => model.PIDInfor.PeopleName)
             </th>
             <th class="align-middle table-success">
-                @Html.DisplayNameFor(model => model.CarInfor.CarPlate)
+                @Html.DisplayNameFor(model => model.PIDInfor.PeopleFrom)
+            </th>
+            <th class="align-middle table-success">
+                @Html.DisplayNameFor(model => model.PIDInfor.PeopleGende)
+            </th>
+            <th class="align-middle table-success">
+                @Html.DisplayNameFor(model => model.PIDInfor.PeopleDateOfBirth)
+            </th>
+            <th class="align-middle table-success">
+                @Html.DisplayNameFor(model => model.PIDInfor.PeopleAddress)
+            </th>            
+
+            <th class="align-middle table-success">
+                @Html.DisplayNameFor(model => model.PIDInfor.PeoplePIDNumber)
+            </th>
+            <th class="align-middle table-success">
+                @Html.DisplayNameFor(model => model.PIDInfor.PeoplePIDDate)
+            </th>
+            <th class="align-middle table-success">
+                @Html.DisplayNameFor(model => model.PIDInfor.PeoplePIDPlace)
+            </th>
+            <th class="align-middle table-success">
+                @Html.DisplayNameFor(model => model.PIDInfor.PeoplePIDValidUntil)
             </th>
             <th class="align-middle table-success">
                 @Html.DisplayNameFor(model => model.DriverNote)
@@ -27,22 +53,58 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td class="align-middle">
-                    @Html.DisplayFor(modelItem => item.PIDInfor.PeopleName)
-                </td>
-                <td class="align-middle">
-                    @Html.DisplayFor(modelItem => item.CarInfor.CarPlate)
-                </td>
-                <td class="align-middle">
-                    @Html.DisplayFor(modelItem => item.DriverNote)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                </td>
-            </tr>
+            //string selectedRow = "";
+            //if ((item.PIDInfor.PeopleID == (int?)ViewData["PeopleID"]) && (item.CarInfor.CarID==(int?)ViewData["CarID"]))
+            //{
+            //    selectedRow = "success";
+            //}
+            @*<tr class="@selectedRow">*@
+        <tr>
+            <td class="align-middle">
+                @*@Html.DisplayFor(modelItem => item.CarInfor.CarPlate)*@
+                <a asp-controller="Cars" asp-action="Edit" asp-route-id="@item.CarInfor.CarID">@Html.DisplayFor(modelItem => item.CarInfor.CarPlate)</a>
+            </td>
+
+            <td class="align-middle">
+                <a asp-controller="Peoples" asp-action="Edit" asp-route-id="@item.PIDInfor.PeopleID">@Html.DisplayFor(modelItem => item.PIDInfor.PeopleName)</a>               
+            </td>
+
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.PIDInfor.PeopleFrom)
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.PIDInfor.PeopleGende)
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.PIDInfor.PeopleDateOfBirth)
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.PIDInfor.PeopleAddress)
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.PIDInfor.PeoplePIDNumber)
+            </td>            
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.PIDInfor.PeoplePIDDate)
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.PIDInfor.PeoplePIDPlace)
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.PIDInfor.PeoplePIDValidUntil)
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.DriverNote)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ })*|
+                @*<a asp-action="Edit" asp-route=""></a>*@
+
+
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
         }
     </tbody>
 </table>
@@ -61,5 +123,10 @@
                 });
         }
         );
+    </script>
+    <script type="text/javascript">
+        $('#CarDriverTable').on('click', 'tbody tr', function () {
+            $(this).addClass('Primary').siblings().removeClass('Primary');
+        });
     </script>
 }

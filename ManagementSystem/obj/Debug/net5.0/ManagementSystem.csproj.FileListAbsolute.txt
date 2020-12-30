@@ -473,7 +473,6 @@ F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSy
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ref\ManagementSystem.dll
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.pdb
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.genruntimeconfig.cache
-F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.csprojAssemblyReference.cache
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Cars\Create.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Cars\Delete.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Cars\Details.cshtml.g.cs
@@ -965,3 +964,15 @@ D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5
 D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarDrivers\Edit.cshtml.g.cs
 D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarDrivers\Index.cshtml.g.cs
 D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Peoples\PeopleContact.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarDrivers\Create.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarDrivers\Delete.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarDrivers\Details.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarDrivers\Edit.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarDrivers\Index.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Peoples\PeopleContact.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Create.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Delete.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Details.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Edit.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Index.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.csprojAssemblyReference.cache

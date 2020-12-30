@@ -22,6 +22,10 @@ namespace ManagementSystem.Controllers
         // GET: CarDrivers
         public async Task<IActionResult> Index()
         {
+            
+            ViewData["CarID"] = new SelectList(_context.Cars, "CarID", "CarID");
+            ViewData["PeopleID"] = new SelectList(_context.Peoples, "PeopleID", "PeopleName");
+            //ViewBag.CarID = ViewData["CarID"].
             var applicationDbContext = _context.CarDrivers.Include(c => c.CarInfor).Include(c => c.PIDInfor);
             return View(await applicationDbContext.ToListAsync());
         }
