@@ -6,6 +6,7 @@
 
 <h1>Edit</h1>
 
+
 <h4>Car</h4>
 <hr />
 <div class="row">
@@ -59,8 +60,8 @@
                 <span asp-validation-for="LocationValidUntil" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PeopleID" class="control-label"></label>
-                <select asp-for="PeopleID" class="form-control" asp-items="ViewBag.PeopleID"></select>
+                <label asp-for="PeopleID" class="control-label">Chọn tên chủ xe</label>
+                <select class="js-example-basic-single" asp-for="PeopleID" class="form-control" asp-items="ViewBag.PeopleID"></select>
                 <span asp-validation-for="PeopleID" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -83,7 +84,17 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
+
 
 @section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-single').select2();
+        });
+    </script>
+
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

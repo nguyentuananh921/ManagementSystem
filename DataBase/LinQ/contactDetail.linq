@@ -15,7 +15,10 @@ var result =  from p in Peoples
 	{	
 		PeopleID = p.PeopleID,
 		PeopleName=p.PeopleName,
-		ContactNo=detail.ContactNo
+		ContactNo=detail.ContactNo,
+		LastCall=detail.LastCall,
+		NumberStatus=detail.NumberStatus,
+		NumberNote=detail.NumberNote
 	};
 
 
@@ -33,4 +36,12 @@ from p in Peoples
 		PeopleID = p.PeopleID,
 		PeopleName=p.PeopleName,
 		ContactNo=detail.ContactNo
+	}
+	
+	from p in Peoples 
+	join c in Contacts on p.PeopleID equals c.PeopleID into ContactDetail
+	from  detail in ContactDetail.DefaultIfEmpty()
+	select new
+	{	
+		p,detail
 	}

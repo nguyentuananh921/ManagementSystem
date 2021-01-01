@@ -10,7 +10,6 @@ using ManagementSystem.Models;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 
-
 namespace ManagementSystem.Controllers
 {
     public class CarModelsController : Controller
@@ -59,7 +58,7 @@ namespace ManagementSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CarModelID,CarModelVendor,CarModelModel,CarModelNumberOfSeat,ImageFile")] CarModel carmodel)
+        public async Task<IActionResult> Create([Bind("CarModelID,CarModelVendor,CarModelModel,CarModelNumberOfSeat,CarModelImageUrl")] CarModel carmodel)
         {
             if (ModelState.IsValid)
             {
@@ -68,14 +67,13 @@ namespace ManagementSystem.Controllers
                 string filename = Path.GetFileNameWithoutExtension(carmodel.ImageFile.FileName);
                 string extension = Path.GetExtension(carmodel.ImageFile.FileName);
                 carmodel.CarModelImageUrl = filename = carmodel.CarModelVendor + "-" + carmodel.CarModelModel + extension;
-                string path = Path.Combine(wwwRootPath + "/img/CarModels/", filename);
+                string path = Path.Combine(wwwRootPath + "/Image/CarModels/", filename);
 
                 using (var fileStream = new FileStream(path, FileMode.Create))
                 {
                     await carmodel.ImageFile.CopyToAsync(fileStream);
                 }
 
-                //Save to Database
                 _context.Add(carmodel);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -115,7 +113,7 @@ namespace ManagementSystem.Controllers
             {
                 try
                 {
-                    //Save image to wwwwroot/Image.
+                    //Save image to wwwwroot/img.
                     string wwwRootPath = _hostEnvironment.WebRootPath;
                     string filename = Path.GetFileNameWithoutExtension(carmodel.ImageFile.FileName);
                     string extension = Path.GetExtension(carmodel.ImageFile.FileName);
@@ -126,8 +124,7 @@ namespace ManagementSystem.Controllers
                     {
                         await carmodel.ImageFile.CopyToAsync(fileStream);
                     }
-
-                    //Update Database
+                    //Save Database
                     _context.Update(carmodel);
                     await _context.SaveChangesAsync();
                 }
@@ -170,7 +167,11 @@ namespace ManagementSystem.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+
+
+
             var carModel = await _context.CarModels.FindAsync(id);
+
             if (carModel.CarModelImageUrl == "")
             {
                 //Do Nothing
@@ -184,6 +185,7 @@ namespace ManagementSystem.Controllers
                     System.IO.File.Delete(imagePath);
                 }
             }
+
 
             //Delete the record
             _context.CarModels.Remove(carModel);

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ManagementSystem.Data;
 using ManagementSystem.Models;
+using ManagementSystem.Models.ViewModel;
 
 namespace ManagementSystem.Controllers
 {
@@ -20,23 +21,13 @@ namespace ManagementSystem.Controllers
         }
 
         // GET: Contacts
-        //public async Task<IActionResult> Index()
-        //{
-        //    var applicationDbContext = _context.Contacts.Include(c => c.PIDInfor);
-        //    return View(await applicationDbContext.ToListAsync());
-        //}
-
         public async Task<IActionResult> Index()
         {
-            //var applicationDbContext = _context.Contacts.Include(c => c.PIDInfor);
-            //return View(await applicationDbContext.ToListAsync());
-
-            var peoplecontactvm = await _context.Peoples.Include(c => c.Contacts)
-                                            .Include(c=>c.CarDrivers).ThenInclude(c=>c.CarInfor)
-                                                                        .ThenInclude(c=>c.CarModel).ToListAsync();
-            
-            return View(peoplecontactvm);
+            var applicationDbContext = _context.Contacts.Include(c => c.PIDInfor);
+            return View(await applicationDbContext.ToListAsync());
         }
+
+        
 
         // GET: Contacts/Details/5
         public async Task<IActionResult> Details(int? id)

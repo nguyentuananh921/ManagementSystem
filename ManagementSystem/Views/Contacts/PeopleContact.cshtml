@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewData["Title"] = "PeopleContact";
+}
+
+<h1>PeopleContact</h1>
+
+@model IEnumerable<ManagementSystem.Models.Contact>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PIDInfor.PeopleName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastCall)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberNote)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PIDInfor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PIDInfor.PeopleName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastCall)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberNote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PIDInfor.PeopleName)
+            </td>
+
+        </tr>
+        }
+    </tbody>
+</table>

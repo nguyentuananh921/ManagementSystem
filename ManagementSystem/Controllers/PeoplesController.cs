@@ -31,9 +31,14 @@ namespace ManagementSystem.Controllers
         public async Task<IActionResult> PeopeleContact()
         {
             var peopleContactVM = _context.Peoples.Include(c => c.Contacts);
-                                
-            return View("PeopeleContact", await peopleContactVM.ToListAsync());
+
+            return View( await peopleContactVM.ToListAsync());
         }
+        //public IActionResult PeopleContact()
+        //{
+        //    var people = _context.Peoples.Include("Contacts").FirstOrDefault();
+        //    return View("PeopleContact", people);
+        //}
 
         // GET: Peoples/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -159,5 +164,7 @@ namespace ManagementSystem.Controllers
         {
             return _context.Peoples.Any(e => e.PeopleID == id);
         }
+
+       
     }
 }

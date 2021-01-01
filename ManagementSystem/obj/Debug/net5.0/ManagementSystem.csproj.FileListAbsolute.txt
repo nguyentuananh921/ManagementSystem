@@ -441,11 +441,6 @@ F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSy
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.TagHelpers.output.cache
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.RazorCoreGenerate.cache
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
-F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarModels\Create.cshtml.g.cs
-F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarModels\Delete.cshtml.g.cs
-F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarModels\Details.cshtml.g.cs
-F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarModels\Edit.cshtml.g.cs
-F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarModels\Index.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Peoples\Create.cshtml.g.cs
@@ -969,10 +964,14 @@ F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarDrivers\Details.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarDrivers\Edit.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarDrivers\Index.cshtml.g.cs
-F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Peoples\PeopleContact.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Create.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Delete.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Details.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Edit.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Index.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarModels\Create.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarModels\Delete.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarModels\Details.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarModels\Edit.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarModels\Index.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.csprojAssemblyReference.cache

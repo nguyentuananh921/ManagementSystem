@@ -4,53 +4,52 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Sửa đổi</h1>
+<h1>Edit</h1>
 
-<h4>Loại xe</h4>
+<h4>CarModel</h4>
 <hr />
 <div class="row">
-    <div class="row col-md-4">
-        <form asp-action="Edit" enctype="multipart/form-data">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data" method="post" >
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="CarModelID" />
-            <div class="form-group col-12">
+            <div class="form-group">
                 <label asp-for="CarModelVendor" class="control-label"></label>
                 <input asp-for="CarModelVendor" class="form-control" />
                 <span asp-validation-for="CarModelVendor" class="text-danger"></span>
             </div>
-            <div class="form-group col-12">
+            <div class="form-group">
                 <label asp-for="CarModelModel" class="control-label"></label>
                 <input asp-for="CarModelModel" class="form-control" />
                 <span asp-validation-for="CarModelModel" class="text-danger"></span>
             </div>
-            <div class="form-group col-12">
+            <div class="form-group">
                 <label asp-for="CarModelNumberOfSeat" class="control-label"></label>
                 <input asp-for="CarModelNumberOfSeat" class="form-control" />
                 <span asp-validation-for="CarModelNumberOfSeat" class="text-danger"></span>
+            </div>           
+
+            <div class="row col-md-8">
+                <img id="blah" src="@("~/img/CarModels/"+ Model.CarModelImageUrl)" asp-append-version="true" />
+                <div class="form-group">
+                    <label asp-for="ImageFile" class="control-label"></label>
+                    <input asp-for="ImageFile" id="imgInp" />
+                    <span asp-validation-for="ImageFile" class="text-danger"></span>
+                </div>
             </div>
 
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
         </form>
     </div>
-    <div class="row col-md-8">
-        <img id="blah" src="@("~/img/CarModels/"+ Model.CarModelImageUrl)" asp-append-version="true" />
-        <div class="form-group">
-            <label asp-for="ImageFile" class="control-label"></label>
-            <input asp-for="ImageFile" id="imgInp" />
-            <span asp-validation-for="ImageFile" class="text-danger"></span>
-        </div>
-    </div>
-</div>
-<div class="form-group">
-    <input type="submit" value="Save" class="btn btn-primary" />
-
 </div>
 
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts
-{
+@section Scripts {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
         function readURL(input) {
@@ -69,5 +68,6 @@
             readURL(this);
         });
     </script>
+
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
