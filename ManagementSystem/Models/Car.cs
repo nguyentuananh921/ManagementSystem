@@ -7,12 +7,14 @@ using Microsoft.EntityFrameworkCore;
 using ManagementSystem.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 using ManagementSystem.Data;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace ManagementSystem.Models
 {
     public class Car
     {
-        [Key, Required]            
+        [Key, Required]  
+        [BindRequired]
         public int CarID { get; set; }
 
         [ForeignKey("CarModel")]

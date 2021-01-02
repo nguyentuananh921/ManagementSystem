@@ -80,6 +80,11 @@
         {
             <tr>
                 <td class="align-middle">
+                    @if (item.PeopleID!=null)
+                    {
+                    <a asp-controller="Peoples" asp-action="Edit" asp-route-id="@item.PeopleID"><i class="fas fa-user-edit"></i></a>
+                    }
+                    
                     @Html.DisplayFor(modelItem => item.PIDInfor.PeopleName)
                 </td>
                 <td class="align-middle">
@@ -94,8 +99,9 @@
                 </td>
 
                 <td class="align-middle">
-                    <a asp-controller="Cars" asp-action="Edit" asp-route-id="@item.CarID">@Html.DisplayFor(modelItem => item.CarPlate)</a>
-
+                    <a asp-controller="Cars" asp-action="Edit" asp-route-id="@item.CarID"> <i class="fas fa-car"></i>
+                    </a>
+                    @Html.DisplayFor(modelItem => item.CarPlate)
                 </td>
                 <td class="align-middle">
                     @Html.DisplayFor(modelItem => item.CarModel.CarModelVendor)

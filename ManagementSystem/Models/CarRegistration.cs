@@ -33,13 +33,14 @@ namespace ManagementSystem.Models
 
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        
         [Display(Name = "Đăng ký lần đầu")]
         public DateTime? CarDateofFirstRegistration { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        [Display(Name = "Đăng ký lần đầu")]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]        
+        [Display(Name = "Ngày đăng ký")]
         public DateTime? CarDateRegistration { get; set; }
 
         [Display(Name = "Ghi chú")]

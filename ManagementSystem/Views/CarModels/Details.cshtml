@@ -4,36 +4,47 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Chi tiết</h1>
 
 <div>
-    <h4>CarModel</h4>
+    <h4>Loại xe</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CarModelVendor)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CarModelVendor)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CarModelModel)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CarModelModel)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CarModelNumberOfSeat)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CarModelNumberOfSeat)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CarModelImageUrl)
-        </dt>
-        <dd class="col-sm-10">        
-            <img id="blah" src="@("~/img/CarModels/"+ @Html.DisplayFor(model => model.CarModelImageUrl))"  />            
-        </dd>
+
+    <div class="row">
+        <div class="col-md-4">
+            <dl class="row">
+                <dt class="col-md-6">
+                    @Html.DisplayNameFor(model => model.CarModelVendor)
+                </dt>
+                <dd class="col-md-6">
+                    @Html.DisplayFor(model => model.CarModelVendor)
+                </dd>
+            </dl>
+            <dl class="row">
+                <dt class="col-md-6">
+                    @Html.DisplayNameFor(model => model.CarModelModel)
+                </dt>
+                <dd class="col-md-6">
+                    @Html.DisplayFor(model => model.CarModelModel)
+                </dd>
+            </dl>
+            <dl class="row">
+                <dt class="col-md-6">
+                    @Html.DisplayNameFor(model => model.CarModelNumberOfSeat)
+                </dt>
+                <dd class="col-md-6">
+                    @Html.DisplayFor(model => model.CarModelNumberOfSeat)
+                </dd>
+            </dl>          
+
+        </div>
+        <div class="col-md-8">            
+                <img src="@("~/img/CarModels/"+ Model.CarModelImageUrl)" asp-append-version="true" />           
+        </div>
+    </div>
+    <dl class="row">          
+        
+
     </dl>
 </div>
 <div>

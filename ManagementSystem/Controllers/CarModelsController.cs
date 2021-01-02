@@ -58,27 +58,29 @@ namespace ManagementSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CarModelID,CarModelVendor,CarModelModel,CarModelNumberOfSeat,CarModelImageUrl")] CarModel carmodel)
+        public async Task<IActionResult> Create([Bind("CarModelVendor,CarModelModel,CarModelNumberOfSeat,ImageFile")] CarModel carModel)
         {
             if (ModelState.IsValid)
             {
                 //Save image to wwwwroot/Image.
                 string wwwRootPath = _hostEnvironment.WebRootPath;
-                string filename = Path.GetFileNameWithoutExtension(carmodel.ImageFile.FileName);
-                string extension = Path.GetExtension(carmodel.ImageFile.FileName);
-                carmodel.CarModelImageUrl = filename = carmodel.CarModelVendor + "-" + carmodel.CarModelModel + extension;
-                string path = Path.Combine(wwwRootPath + "/Image/CarModels/", filename);
+                string filename = Path.GetFileNameWithoutExtension(carModel.ImageFile.FileName);
+                string extension = Path.GetExtension(carModel.ImageFile.FileName);
+                carModel.CarModelImageUrl = filename = carModel.CarModelVendor + "-" + carModel.CarModelModel + extension;
+                string path = Path.Combine(wwwRootPath + "/img/CarModels/", filename);
 
                 using (var fileStream = new FileStream(path, FileMode.Create))
                 {
-                    await carmodel.ImageFile.CopyToAsync(fileStream);
+                    await carModel.ImageFile.CopyToAsync(fileStream);
                 }
 
-                _context.Add(carmodel);
+
+               //Save Database
+                _context.Add(carModel);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(carmodel);
+            return View(carModel);
         }
 
         // GET: CarModels/Edit/5
@@ -94,6 +96,7 @@ namespace ManagementSystem.Controllers
             {
                 return NotFound();
             }
+
             return View(carModel);
         }
 
@@ -102,9 +105,9 @@ namespace ManagementSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CarModelID,CarModelVendor,CarModelModel,CarModelNumberOfSeat,CarModelImageUrl,ImageFile")] CarModel carmodel)
+        public async Task<IActionResult> Edit(int id, [Bind("CarModelID,CarModelVendor,CarModelModel,CarModelNumberOfSeat,ImageFile")] CarModel carModel)
         {
-            if (id != carmodel.CarModelID)
+            if (id != carModel.CarModelID)
             {
                 return NotFound();
             }
@@ -113,24 +116,25 @@ namespace ManagementSystem.Controllers
             {
                 try
                 {
-                    //Save image to wwwwroot/img.
+                    //Save image to wwwwroot/Image.
                     string wwwRootPath = _hostEnvironment.WebRootPath;
-                    string filename = Path.GetFileNameWithoutExtension(carmodel.ImageFile.FileName);
-                    string extension = Path.GetExtension(carmodel.ImageFile.FileName);
-                    carmodel.CarModelImageUrl = filename = carmodel.CarModelVendor + "-" + carmodel.CarModelModel + extension;
+                    string filename = Path.GetFileNameWithoutExtension(carModel.ImageFile.FileName);
+                    string extension = Path.GetExtension(carModel.ImageFile.FileName);
+                    carModel.CarModelImageUrl = filename = carModel.CarModelVendor + "-" + carModel.CarModelModel + extension;
                     string path = Path.Combine(wwwRootPath + "/img/CarModels/", filename);
 
                     using (var fileStream = new FileStream(path, FileMode.Create))
                     {
-                        await carmodel.ImageFile.CopyToAsync(fileStream);
+                        await carModel.ImageFile.CopyToAsync(fileStream);
                     }
                     //Save Database
-                    _context.Update(carmodel);
+
+                    _context.Update(carModel);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CarModelExists(carmodel.CarModelID))
+                    if (!CarModelExists(carModel.CarModelID))
                     {
                         return NotFound();
                     }
@@ -141,7 +145,7 @@ namespace ManagementSystem.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(carmodel);
+            return View(carModel);
         }
 
         // GET: CarModels/Delete/5
@@ -167,27 +171,7 @@ namespace ManagementSystem.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-
-
-
             var carModel = await _context.CarModels.FindAsync(id);
-
-            if (carModel.CarModelImageUrl == "")
-            {
-                //Do Nothing
-            }
-            else
-            {
-                var imagePath = Path.Combine(_hostEnvironment.WebRootPath + "/img/CarModels/", carModel.CarModelImageUrl);
-                if (System.IO.File.Exists(imagePath))
-                {
-                    //Delete the file
-                    System.IO.File.Delete(imagePath);
-                }
-            }
-
-
-            //Delete the record
             _context.CarModels.Remove(carModel);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

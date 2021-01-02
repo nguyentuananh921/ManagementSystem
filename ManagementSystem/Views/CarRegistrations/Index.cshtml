@@ -1,0 +1,77 @@
+﻿@model IEnumerable<ManagementSystem.Models.CarRegistration>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CarInfor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PIDInfor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarPlate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarPlateColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarDateofFirstRegistration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarDateRegistration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarRegistrationNote)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarRegistrationImageUrl)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarInfor.CarID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PIDInfor.PeopleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarPlate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarPlateColor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarDateofFirstRegistration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarDateRegistration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarRegistrationNote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarRegistrationImageUrl)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CarRegistrationID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CarRegistrationID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CarRegistrationID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

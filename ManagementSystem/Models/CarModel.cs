@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using ManagementSystem.Data;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel;
-
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 
 
@@ -19,6 +19,7 @@ namespace ManagementSystem.Models
     {
         [Key]
         [Required]
+        [BindRequired]
         public int CarModelID { get; set; }
 
         [Display(Name = "Hãng xe")]
