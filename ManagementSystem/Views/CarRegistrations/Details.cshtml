@@ -1,66 +1,80 @@
 ﻿@model ManagementSystem.Models.CarRegistration
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi tiết đăng ký";
 }
 
-<h1>Details</h1>
+<h1>Chi tiết đăng ký</h1>
 
 <div>
-    <h4>CarRegistration</h4>
+    <h4>Đăng ký xe</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CarInfor)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CarInfor.CarID)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PIDInfor)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PIDInfor.PeopleName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CarPlate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CarPlate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CarPlateColor)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CarPlateColor)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CarDateofFirstRegistration)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CarDateofFirstRegistration)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CarDateRegistration)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CarDateRegistration)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CarRegistrationNote)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CarRegistrationNote)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CarRegistrationImageUrl)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CarRegistrationImageUrl)
-        </dd>
-    </dl>
+    <div class="row">
+        <div class="col-md-4">
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.CarInfor.CarPlate)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CarInfor.CarPlate)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.PIDInfor.PeopleName)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.PIDInfor.PeopleName)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.CarPlate)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CarPlate)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.CarPlateColor)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CarPlateColor)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.CarDateofFirstRegistration)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CarDateofFirstRegistration)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.CarDateRegistration)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CarDateRegistration)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.CarRegistrationNote)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CarRegistrationNote)
+                </dd>
+
+            </dl>
+        </div>
+
+        <div class="col-md-8">
+            <dl>
+                <img id="blah" src="@("~/img/Cars/"+Model.CarPlate+"/"+ Model.CarRegistrationImageUrl)" asp-append-version="true" width="100%" height="auto" />
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.CarRegistrationImageUrl)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CarRegistrationImageUrl)
+                </dd>
+            </dl>
+
+        </div>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.CarRegistrationID">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.CarRegistrationID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+    

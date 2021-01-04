@@ -64,30 +64,26 @@ namespace ManagementSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CarRegistrationID,CarID,PeopleID,CarPlate,CarPlateColor,CarDateofFirstRegistration,CarDateRegistration,CarRegistrationNote,CarRegistrationImageUrl")] CarRegistration carRegistration)
+        public async Task<IActionResult> Create([Bind("CarRegistrationID,CarID,PeopleID,CarPlate,CarPlateColor,CarDateofFirstRegistration,CarDateRegistration,CarRegistrationNote,CarRegistrationImageUrl,ImageFile")] CarRegistration carRegistration)
         {
             if (ModelState.IsValid)
             {
-                //Save image to wwwwroot/ Image.
+                //Save image to wwwwroot/Img.
                 string wwwRootPath = _hostEnvironment.WebRootPath;
-                
-                if (!Directory.Exists(wwwRootPath + "/img/Cars/" + carRegistration.CarPlate))
+                string savePath = wwwRootPath + "/img/Cars/" + carRegistration.CarPlate;
+
+                if (!Directory.Exists(savePath))
                 {
-                    Directory.CreateDirectory(wwwRootPath + "/img/Cars/" + carRegistration.CarPlate);
-                }
-                string savePath = wwwRootPath + "/img/Car/" + carRegistration.CarPlate;
-                //string filename = Path.GetFileNameWithoutExtension(carmodel.ImageFile.FileName);
-                string filename = Path.GetFileNameWithoutExtension(carRegistration.ImageFile.FileName);
-
+                    Directory.CreateDirectory(savePath);
+                }                
                 
-
-
+                string filename = Path.GetFileNameWithoutExtension(carRegistration.ImageFile.FileName);
                 string extension = Path.GetExtension(carRegistration.ImageFile.FileName);
-                //string datestring = carRegistration.CarDateRegistration.ToString(carRegistration.CarDateRegistration, "yyyy-MM-DD");
-                //string datestring = DateTime.ParseExact(carRegistration.CarDateRegistration, "yyyy-mm-dd");
-                string datestring = carRegistration.CarDateRegistration.ToString();
-                carRegistration.CarRegistrationImageUrl = filename = carRegistration.CarPlate + " " + datestring + " " + extension;
-                string path = Path.Combine(wwwRootPath + "/img/carRegistration.CarPlate/", filename);
+                
+                string datestring = carRegistration.CarDateRegistration.Value.ToString("yyyy-MM-dd");
+
+                carRegistration.CarRegistrationImageUrl = filename = carRegistration.CarPlate + " Đăng ký " + datestring + " " + Guid.NewGuid() + extension;
+                string path = Path.Combine(savePath + "/", filename);
 
                 using (var fileStream = new FileStream(path, FileMode.Create))
                 {

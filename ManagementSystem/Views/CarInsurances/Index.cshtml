@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ManagementSystem.Models.CarInsurance>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CarInfo.CarPlate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarInsuranceDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarInsuranceValidUntil)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarInsuranceImagePath)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarInfo.CarPlate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarInsuranceDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarInsuranceValidUntil)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarInsuranceImagePath)
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CarInsuranceID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CarInsuranceID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CarInsuranceID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

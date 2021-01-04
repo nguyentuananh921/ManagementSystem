@@ -1,14 +1,80 @@
 ﻿@model ManagementSystem.Models.CarRegistration
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Thêm mới đăng ký xe";
 }
 
-<h1>Create</h1>
+<h1>Thêm mới</h1>
 
-<h4>CarRegistration</h4>
+<h4>Đăng ký xe</h4>
 <hr />
-<div class="row">
+<form asp-action="Create" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CarID" class="control-label">Chọn biển số xe</label>
+                <select class="form-control js-example-basic-single" asp-for="CarID" asp-items="ViewBag.CarID">
+                    <option value="Chọn biển số" hidden disabled selected> Chọn biển số xe</option>
+                </select>
+
+                <span asp-validation-for="CarID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PeopleID" class="control-label">Chọn tên chủ xe</label>
+                <select class="form-control js-example-basic-single" asp-for="PeopleID" asp-items="ViewBag.PeopleID">
+                    <option value="Chọn chủ xe" hidden disabled selected> Chọn chủ xe</option>
+                </select>
+
+                <span asp-validation-for="PeopleID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarPlate" class="control-label"></label>
+                <input asp-for="CarPlate" class="form-control" />
+                <span asp-validation-for="CarPlate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarPlateColor" class="control-label"></label>
+                <input asp-for="CarPlateColor" class="form-control" />
+                <span asp-validation-for="CarPlateColor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarDateofFirstRegistration" class="control-label"></label>
+                <input asp-for="CarDateofFirstRegistration" class="form-control" />
+                <span asp-validation-for="CarDateofFirstRegistration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarDateRegistration" class="control-label"></label>
+                <input asp-for="CarDateRegistration" class="form-control" />
+                <span asp-validation-for="CarDateRegistration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarRegistrationNote" class="control-label"></label>
+                <input asp-for="CarRegistrationNote" class="form-control" />
+                <span asp-validation-for="CarRegistrationNote" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            @*<img id="blah" src="@("~/img/Cars"+ Model.CarPlate + Model.CarRegistrationImageUrl)" asp-append-version="true" />*@
+            <img id="blah" src="#" asp-append-version="true"/>
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label"></label>
+                <input type="hidden" asp-for="CarRegistrationImageUrl" />
+                <input asp-for="ImageFile" id="imgInp" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </div>
+
+</form>
+
+
+<!--<div class="row">
     <div class="col-md-4">
         <form asp-action="Create" enctype="multipart/form-data" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -55,9 +121,9 @@
                 <span asp-validation-for="CarRegistrationNote" class="text-danger"></span>
             </div>          
 
-            <div>
+            <div>-->
                 @*<img id="blah" src="@("~/img/"+ Model.CarRegistrationImageUrl)" asp-append-version="true" />*@
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label asp-for="ImageFile" class="control-label"></label>
                     <input asp-for="ImageFile" id="imgInp" />
                     <span asp-validation-for="ImageFile" class="text-danger"></span>
@@ -68,7 +134,7 @@
             </div>
         </form>
     </div>
-</div>
+</div>-->
 
 <div>
     <a asp-action="Index">Back to List</a>
@@ -80,6 +146,20 @@
 
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#blah').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]); // convert to base64 string
+            }
+        }
+        $("#imgInp").change(function () {
+            readURL(this);
+        });
+    </script>
     <script>
         $(document).ready(function () {
             $('.js-example-basic-single').select2();

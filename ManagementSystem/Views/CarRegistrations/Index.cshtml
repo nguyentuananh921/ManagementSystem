@@ -32,11 +32,8 @@
             </th>
             <th class="align-middle table-success">
                 @Html.DisplayNameFor(model => model.CarRegistrationNote)
-            </th>
-            <th class="align-middle table-success">
-                @Html.DisplayNameFor(model => model.CarRegistrationImageUrl)
-            </th>
-            <th></th>
+            </th>            
+            <th class="align-middle table-success"></th>
         </tr>
     </thead>
     <tbody>
@@ -63,10 +60,7 @@
                 </td>
                 <td class="align-middle">
                     @Html.DisplayFor(modelItem => item.CarRegistrationNote)
-                </td>
-                <td class="align-middle">
-                    @Html.DisplayFor(modelItem => item.CarRegistrationImageUrl)
-                </td>
+                </td>                
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.CarRegistrationID">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.CarRegistrationID">Details</a> |

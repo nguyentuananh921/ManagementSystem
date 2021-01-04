@@ -1,0 +1,112 @@
+﻿@model ManagementSystem.Models.CarInsurance
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>CarInsurance</h4>
+<hr />
+<form asp-action="Create" enctype="multipart/form-data" method="post">
+    <div class="row">
+        <div class="col-md-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CarID" class="control-label">Chọn biển số xe</label>
+                <select asp-for="CarID" class="form-control js-example-basic-single" asp-items="ViewBag.CarID">
+                    <option value="Chọn biển số" hidden disabled selected> Chọn biển số xe</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarInsuranceDate" class="control-label"></label>
+                <input asp-for="CarInsuranceDate" class="form-control" />
+                <span asp-validation-for="CarInsuranceDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarInsuranceValidUntil" class="control-label"></label>
+                <input asp-for="CarInsuranceValidUntil" class="form-control" />
+                <span asp-validation-for="CarInsuranceValidUntil" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <img id="blah" src="#" asp-append-version="true" />
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label"></label>
+                <input asp-for="ImageFile" id="imgInp" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </div>
+</form>
+
+
+@*<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CarID" class="control-label">Chọn biển số xe</label>
+                <select asp-for="CarID" class="form-control js-example-basic-single" asp-items="ViewBag.CarID">
+                    <option value="Chọn biển số" hidden disabled selected> Chọn biển số xe</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarInsuranceDate" class="control-label"></label>
+                <input asp-for="CarInsuranceDate" class="form-control" />
+                <span asp-validation-for="CarInsuranceDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarInsuranceValidUntil" class="control-label"></label>
+                <input asp-for="CarInsuranceValidUntil" class="form-control" />
+                <span asp-validation-for="CarInsuranceValidUntil" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarInsuranceImagePath" class="control-label"></label>
+                <input asp-for="CarInsuranceImagePath" class="form-control" />
+                <span asp-validation-for="CarInsuranceImagePath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>*@
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
+
+
+@section Scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#blah').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]); // convert to base64 string
+            }
+        }
+        $("#imgInp").change(function () {
+            readURL(this);
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-single').select2();
+        });
+    </script>
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
