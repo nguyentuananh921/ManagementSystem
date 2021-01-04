@@ -9,69 +9,84 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table id="carRegistration" class="table table-striped table-bordered table-hover display nowrap" style="width:100%">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CarInfor)
+            <th class="align-middle table-success">
+                @Html.DisplayNameFor(model => model.CarInfor.CarPlate)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PIDInfor)
+            <th class="align-middle table-success">
+                @Html.DisplayNameFor(model => model.PIDInfor.PeopleName)
             </th>
-            <th>
+            <th class="align-middle table-success">
                 @Html.DisplayNameFor(model => model.CarPlate)
             </th>
-            <th>
+            <th class="align-middle table-success">
                 @Html.DisplayNameFor(model => model.CarPlateColor)
             </th>
-            <th>
+            <th class="align-middle table-success">
                 @Html.DisplayNameFor(model => model.CarDateofFirstRegistration)
             </th>
-            <th>
+            <th class="align-middle table-success">
                 @Html.DisplayNameFor(model => model.CarDateRegistration)
             </th>
-            <th>
+            <th class="align-middle table-success">
                 @Html.DisplayNameFor(model => model.CarRegistrationNote)
             </th>
-            <th>
+            <th class="align-middle table-success">
                 @Html.DisplayNameFor(model => model.CarRegistrationImageUrl)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarInfor.CarID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PIDInfor.PeopleName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarPlate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarPlateColor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarDateofFirstRegistration)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarDateRegistration)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarRegistrationNote)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarRegistrationImageUrl)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CarRegistrationID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CarRegistrationID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CarRegistrationID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.CarInfor.CarPlate)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.PIDInfor.PeopleName)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.CarPlate)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.CarPlateColor)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.CarDateofFirstRegistration)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.CarDateRegistration)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.CarRegistrationNote)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.CarRegistrationImageUrl)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CarRegistrationID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.CarRegistrationID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.CarRegistrationID">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+@section scripts
+    {
+
+
+    <script>
+        $(document).ready(function () {
+            $('#carRegistration').DataTable
+                ({
+                    scrollX: true
+                });
+        }
+        );
+    </script>
+}

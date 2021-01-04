@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Hồ sơ lái xe";
 }
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
 
 <h1>Danh sách lái xe</h1>
 
@@ -30,7 +32,7 @@
             </th>
             <th class="align-middle table-success">
                 @Html.DisplayNameFor(model => model.PIDInfor.PeopleAddress)
-            </th>            
+            </th>
 
             <th class="align-middle table-success">
                 @Html.DisplayNameFor(model => model.PIDInfor.PeoplePIDNumber)
@@ -59,61 +61,61 @@
             //    selectedRow = "success";
             //}
             @*<tr class="@selectedRow">*@
-        <tr>
-            <td class="align-middle">
-                @*@Html.DisplayFor(modelItem => item.CarInfor.CarPlate)*@
-                <a asp-controller="Cars" asp-action="Edit" asp-route-id="@item.CarInfor.CarID">@Html.DisplayFor(modelItem => item.CarInfor.CarPlate)</a>
-            </td>
+            <tr>
+                <td class="align-middle">
+                    @*@Html.DisplayFor(modelItem => item.CarInfor.CarPlate)*@
+                    <a asp-controller="Cars" asp-action="Edit" asp-route-id="@item.CarInfor.CarID">@Html.DisplayFor(modelItem => item.CarInfor.CarPlate)</a>
+                </td>
 
-            <td class="align-middle">
-                <a asp-controller="Peoples" asp-action="Edit" asp-route-id="@item.PIDInfor.PeopleID">@Html.DisplayFor(modelItem => item.PIDInfor.PeopleName)</a>               
-            </td>
+                <td class="align-middle">
+                    <a asp-controller="Peoples" asp-action="Edit" asp-route-id="@item.PIDInfor.PeopleID">@Html.DisplayFor(modelItem => item.PIDInfor.PeopleName)</a>
+                </td>
 
-            <td class="align-middle">
-                @Html.DisplayFor(modelItem => item.PIDInfor.PeopleFrom)
-            </td>
-            <td class="align-middle">
-                @Html.DisplayFor(modelItem => item.PIDInfor.PeopleGende)
-            </td>
-            <td class="align-middle">
-                @Html.DisplayFor(modelItem => item.PIDInfor.PeopleDateOfBirth)
-            </td>
-            <td class="align-middle">
-                @Html.DisplayFor(modelItem => item.PIDInfor.PeopleAddress)
-            </td>
-            <td class="align-middle">
-                @Html.DisplayFor(modelItem => item.PIDInfor.PeoplePIDNumber)
-            </td>            
-            <td class="align-middle">
-                @Html.DisplayFor(modelItem => item.PIDInfor.PeoplePIDDate)
-            </td>
-            <td class="align-middle">
-                @Html.DisplayFor(modelItem => item.PIDInfor.PeoplePIDPlace)
-            </td>
-            <td class="align-middle">
-                @Html.DisplayFor(modelItem => item.PIDInfor.PeoplePIDValidUntil)
-            </td>
-            <td class="align-middle">
-                @Html.DisplayFor(modelItem => item.DriverNote)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ })*|
-                @*<a asp-action="Edit" asp-route=""></a>*@
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.PIDInfor.PeopleFrom)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.PIDInfor.PeopleGende)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.PIDInfor.PeopleDateOfBirth)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.PIDInfor.PeopleAddress)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.PIDInfor.PeoplePIDNumber)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.PIDInfor.PeoplePIDDate)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.PIDInfor.PeoplePIDPlace)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.PIDInfor.PeoplePIDValidUntil)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.DriverNote)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ })*|
+                    @*<a asp-action="Edit" asp-route=""></a>*@
 
 
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
         }
     </tbody>
 </table>
 @section scripts
     {
-
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.jqueryui.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap5.min.js"></script>
+  
 
     <script>
         $(document).ready(function () {

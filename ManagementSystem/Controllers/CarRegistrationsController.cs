@@ -115,7 +115,7 @@ namespace ManagementSystem.Controllers
             {
                 return NotFound();
             }
-            ViewData["CarID"] = new SelectList(_context.Cars, "CarID", "CarID", carRegistration.CarID);
+            ViewData["CarID"] = new SelectList(_context.Cars, "CarID", "CarPlate", carRegistration.CarID);
             ViewData["PeopleID"] = new SelectList(_context.Peoples, "PeopleID", "PeopleName", carRegistration.PeopleID);
             return View(carRegistration);
         }
@@ -125,7 +125,7 @@ namespace ManagementSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CarRegistrationID,CarID,PeopleID,CarPlate,CarPlateColor,CarDateofFirstRegistration,CarDateRegistration,CarRegistrationNote,CarRegistrationImageUrl")] CarRegistration carRegistration)
+        public async Task<IActionResult> Edit(int id, [Bind("CarRegistrationID,CarID,PeopleID,CarPlate,CarPlateColor,CarDateofFirstRegistration,CarDateRegistration,CarRegistrationNote,ImageFile")] CarRegistration carRegistration)
         {
             if (id != carRegistration.CarRegistrationID)
             {
@@ -136,6 +136,30 @@ namespace ManagementSystem.Controllers
             {
                 try
                 {
+                    //Save image to wwwwroot/Image.
+                    string wwwRootPath = _hostEnvironment.WebRootPath;
+                    string filename = Path.GetFileNameWithoutExtension(carRegistration.ImageFile.FileName);
+                    string extension = Path.GetExtension(carRegistration.ImageFile.FileName);
+                    string cardir = wwwRootPath + "/img/Cars/" + carRegistration.CarPlate;
+                    if (!Directory.Exists(cardir))
+                    {
+                        Directory.CreateDirectory(cardir);
+                    }
+                    //string datestring=DateTime.Parse(carRegistration.CarDateRegistration.Value).ToString("yyyy-mm-dd");
+                    //string datestring =  
+
+                    string datestring=carRegistration.CarDateRegistration.Value.ToString("yyyy-MM-dd");
+                    Guid.NewGuid();
+
+                    carRegistration.CarRegistrationImageUrl = filename = carRegistration.CarPlate + " Đăng ký " + datestring +" "+ Guid.NewGuid() + extension;
+                    string path = Path.Combine(cardir, filename);
+
+                    using (var fileStream = new FileStream(path, FileMode.Create))
+                    {
+                        await carRegistration.ImageFile.CopyToAsync(fileStream);
+                    }
+
+
                     _context.Update(carRegistration);
                     await _context.SaveChangesAsync();
                 }
