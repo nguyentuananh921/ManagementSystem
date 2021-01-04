@@ -56,8 +56,9 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <img id="blah" src="@("~/img/"+Model.CarPlate+"/"+ Model.CarRegistrationImageUrl)" asp-append-version="true" width="100%" height="auto" />
+                <img id="blah" src="@("~/img/Cars/"+Model.CarPlate+"/"+ Model.CarRegistrationImageUrl)" asp-append-version="true" width="100%" height="auto" />
                 <div class="form-group">
+                    <input type="hidden" asp-for="CarRegistrationImageUrl" />
                     <label asp-for="ImageFile" class="control-label"></label>
                     <input asp-for="ImageFile" id="imgInp" />
                     <span asp-validation-for="ImageFile" class="text-danger"></span>

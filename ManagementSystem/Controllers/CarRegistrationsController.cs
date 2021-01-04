@@ -125,7 +125,7 @@ namespace ManagementSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CarRegistrationID,CarID,PeopleID,CarPlate,CarPlateColor,CarDateofFirstRegistration,CarDateRegistration,CarRegistrationNote,ImageFile")] CarRegistration carRegistration)
+        public async Task<IActionResult> Edit(int id, [Bind("CarRegistrationID,CarID,PeopleID,CarPlate,CarPlateColor,CarDateofFirstRegistration,CarDateRegistration,CarRegistrationNote,CarRegistrationImageUrl,ImageFile")] CarRegistration carRegistration)
         {
             if (id != carRegistration.CarRegistrationID)
             {
@@ -138,28 +138,36 @@ namespace ManagementSystem.Controllers
                 {
                     //Save image to wwwwroot/Image.
                     string wwwRootPath = _hostEnvironment.WebRootPath;
-                    string filename = Path.GetFileNameWithoutExtension(carRegistration.ImageFile.FileName);
-                    string extension = Path.GetExtension(carRegistration.ImageFile.FileName);
-                    string cardir = wwwRootPath + "/img/Cars/" + carRegistration.CarPlate;
-                    if (!Directory.Exists(cardir))
+                    if (carRegistration.ImageFile != null)
                     {
-                        Directory.CreateDirectory(cardir);
+                        string oldfile = wwwRootPath + "/img/Cars/" + carRegistration.CarPlate + carRegistration.CarRegistrationImageUrl;                        
+
+                        string filename = Path.GetFileNameWithoutExtension(carRegistration.ImageFile.FileName);
+                        string extension = Path.GetExtension(carRegistration.ImageFile.FileName);
+                        string cardir = wwwRootPath + "/img/Cars/" + carRegistration.CarPlate;
+                        if (!Directory.Exists(cardir))
+                        {
+                            Directory.CreateDirectory(cardir);
+                        }
+                        //string datestring=DateTime.Parse(carRegistration.CarDateRegistration.Value).ToString("yyyy-mm-dd");
+                        //string datestring =  
+
+                        string datestring = carRegistration.CarDateRegistration.Value.ToString("yyyy-MM-dd");
+                        Guid.NewGuid();
+
+                        carRegistration.CarRegistrationImageUrl = filename = carRegistration.CarPlate + " Đăng ký " + datestring + " " + Guid.NewGuid() + extension;
+                        string path = Path.Combine(cardir, filename);
+
+                        System.IO.File.Delete(oldfile);
+
+                        using (var fileStream = new FileStream(path, FileMode.Create))
+                        {
+                            await carRegistration.ImageFile.CopyToAsync(fileStream);
+                        }
                     }
-                    //string datestring=DateTime.Parse(carRegistration.CarDateRegistration.Value).ToString("yyyy-mm-dd");
-                    //string datestring =  
 
-                    string datestring=carRegistration.CarDateRegistration.Value.ToString("yyyy-MM-dd");
-                    Guid.NewGuid();
-
-                    carRegistration.CarRegistrationImageUrl = filename = carRegistration.CarPlate + " Đăng ký " + datestring +" "+ Guid.NewGuid() + extension;
-                    string path = Path.Combine(cardir, filename);
-
-                    using (var fileStream = new FileStream(path, FileMode.Create))
-                    {
-                        await carRegistration.ImageFile.CopyToAsync(fileStream);
-                    }
-
-
+                    //string filename = Path.GetFileNameWithoutExtension(carRegistration.ImageFile.FileName);
+                    
                     _context.Update(carRegistration);
                     await _context.SaveChangesAsync();
                 }
