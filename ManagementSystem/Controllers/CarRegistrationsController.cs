@@ -111,6 +111,10 @@ namespace ManagementSystem.Controllers
             {
                 return NotFound();
             }
+            //
+
+
+
             ViewData["CarID"] = new SelectList(_context.Cars, "CarID", "CarPlate", carRegistration.CarID);
             ViewData["PeopleID"] = new SelectList(_context.Peoples, "PeopleID", "PeopleName", carRegistration.PeopleID);
             return View(carRegistration);
@@ -136,11 +140,11 @@ namespace ManagementSystem.Controllers
                     string wwwRootPath = _hostEnvironment.WebRootPath;
                     if (carRegistration.ImageFile != null)
                     {
-                        string oldfile = wwwRootPath + "/img/Cars/" + carRegistration.CarPlate + carRegistration.CarRegistrationImageUrl;                        
+                        string oldfile = wwwRootPath + "/img/Cars/" + carRegistration.CarPlate + "/" + carRegistration.CarRegistrationImageUrl;                        
 
                         string filename = Path.GetFileNameWithoutExtension(carRegistration.ImageFile.FileName);
                         string extension = Path.GetExtension(carRegistration.ImageFile.FileName);
-                        string cardir = wwwRootPath + "/img/Cars/" + carRegistration.CarPlate;
+                        string cardir = wwwRootPath + "/img/Cars/" + carRegistration.CarPlate+"/";
                         if (!Directory.Exists(cardir))
                         {
                             Directory.CreateDirectory(cardir);
@@ -148,8 +152,7 @@ namespace ManagementSystem.Controllers
                         //string datestring=DateTime.Parse(carRegistration.CarDateRegistration.Value).ToString("yyyy-mm-dd");
                         //string datestring =  
 
-                        string datestring = carRegistration.CarDateRegistration.Value.ToString("yyyy-MM-dd");
-                        Guid.NewGuid();
+                        string datestring = carRegistration.CarDateRegistration.Value.ToString("yyyy-MM-dd");                        
 
                         carRegistration.CarRegistrationImageUrl = filename = carRegistration.CarPlate + " Đăng ký " + datestring + " " + Guid.NewGuid() + extension;
                         string path = Path.Combine(cardir, filename);

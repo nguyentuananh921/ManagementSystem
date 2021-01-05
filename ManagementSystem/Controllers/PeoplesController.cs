@@ -9,6 +9,7 @@ using ManagementSystem.Data;
 using ManagementSystem.Models;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using ManagementSystem.Models.ViewModel;
 
 namespace ManagementSystem.Controllers
 {
@@ -28,11 +29,23 @@ namespace ManagementSystem.Controllers
             return View(await _context.Peoples.ToListAsync());
         }
 
-        public async Task<IActionResult> PeopeleContact()
+        public async Task<IActionResult> PeopleContact()
         {
-            var peopleContactVM = _context.Peoples.Include(c => c.Contacts);
+            IQueryable<ViewModelPeopleContact> viewModelPeopleContacts= from p in _context.Peoples
+                                                                        join c in _context.Contacts on p.PeopleID equals c.PeopleID into ContactDetail
+                                                                        from detail in ContactDetail.DefaultIfEmpty()
+                                                                        select new ViewModelPeopleContact()
+                                                                        {
+                                                                            PeopleID = p.PeopleID,
+                                                                            PeopleName = p.PeopleName,
+                                                                            ContactNo = detail.ContactNo,
+                                                                            LastCall = detail.LastCall,
+                                                                            NumberStatus = detail.NumberStatus,
+                                                                            NumberNote = detail.NumberNote
 
-            return View( await peopleContactVM.ToListAsync());
+                                                                        };
+
+            return View( await viewModelPeopleContacts.AsNoTracking().ToListAsync());
         }
         //public IActionResult PeopleContact()
         //{

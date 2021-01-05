@@ -70,6 +70,8 @@ namespace ManagementSystem.Models
         public ICollection<Car> CarOwner { get; set; }
         public ICollection<CarRegistration> CarRegistrations { get; set; }
         public ICollection<CarDriver> CarDrivers { get; set; }
+        public ICollection<PIDImage> PIDImages { get; set; }
+        public ICollection<DriverLicenceImage> DriverLicenceImages { get; set; }
         //public ICollection<CarDriverAssignment> CarDriverAssignments { get; set; }
 
 

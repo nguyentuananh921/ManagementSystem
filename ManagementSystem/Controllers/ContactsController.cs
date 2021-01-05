@@ -20,14 +20,21 @@ namespace ManagementSystem.Controllers
             _context = context;
         }
 
-        // GET: Contacts
+        //GET: Contacts
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Contacts.Include(c => c.PIDInfor);
             return View(await applicationDbContext.ToListAsync());
         }
 
-        
+        //public async Task<IActionResult> PeopleContact()
+        //{
+        //    var peopleContact = await _context.Peoples.Include(c => c.Contacts).Where(c=> c.PeopleID==c.PeopleID).ToList();
+        //    return View(peopleContact);
+        //}
+
+
+
 
         // GET: Contacts/Details/5
         public async Task<IActionResult> Details(int? id)

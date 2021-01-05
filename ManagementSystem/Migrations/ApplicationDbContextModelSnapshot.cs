@@ -264,6 +264,29 @@ namespace ManagementSystem.Migrations
                     b.ToTable("DriverLicences");
                 });
 
+            modelBuilder.Entity("ManagementSystem.Models.DriverLicenceImage", b =>
+                {
+                    b.Property<int>("DLID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("DriverLicenceBack")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DriverLicenceFront")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PeopleID")
+                        .HasColumnType("int");
+
+                    b.HasKey("DLID");
+
+                    b.HasIndex("PeopleID");
+
+                    b.ToTable("DriverLicenceImages");
+                });
+
             modelBuilder.Entity("ManagementSystem.Models.LocationCompany", b =>
                 {
                     b.Property<int>("LocationCompanyID")
@@ -283,6 +306,29 @@ namespace ManagementSystem.Migrations
                     b.HasKey("LocationCompanyID");
 
                     b.ToTable("LocationCompanies");
+                });
+
+            modelBuilder.Entity("ManagementSystem.Models.PIDImage", b =>
+                {
+                    b.Property<int>("PID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("PIDBack")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PIDFront")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PeopleID")
+                        .HasColumnType("int");
+
+                    b.HasKey("PID");
+
+                    b.HasIndex("PeopleID");
+
+                    b.ToTable("PIDImages");
                 });
 
             modelBuilder.Entity("ManagementSystem.Models.People", b =>
@@ -582,13 +628,13 @@ namespace ManagementSystem.Migrations
 
             modelBuilder.Entity("ManagementSystem.Models.CarInsurance", b =>
                 {
-                    b.HasOne("ManagementSystem.Models.Car", "Cars")
+                    b.HasOne("ManagementSystem.Models.Car", "CarInfo")
                         .WithMany()
                         .HasForeignKey("CarID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Cars");
+                    b.Navigation("CarInfo");
                 });
 
             modelBuilder.Entity("ManagementSystem.Models.CarRegistration", b =>
@@ -620,6 +666,28 @@ namespace ManagementSystem.Migrations
                     b.HasOne("ManagementSystem.Models.People", "PIDInfor")
                         .WithOne("DriverLicence")
                         .HasForeignKey("ManagementSystem.Models.DriverLicence", "PeopleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PIDInfor");
+                });
+
+            modelBuilder.Entity("ManagementSystem.Models.DriverLicenceImage", b =>
+                {
+                    b.HasOne("ManagementSystem.Models.People", "PIDInfor")
+                        .WithMany("DriverLicenceImages")
+                        .HasForeignKey("PeopleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PIDInfor");
+                });
+
+            modelBuilder.Entity("ManagementSystem.Models.PIDImage", b =>
+                {
+                    b.HasOne("ManagementSystem.Models.People", "PIDInfor")
+                        .WithMany("PIDImages")
+                        .HasForeignKey("PeopleID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -703,6 +771,10 @@ namespace ManagementSystem.Migrations
                     b.Navigation("Contacts");
 
                     b.Navigation("DriverLicence");
+
+                    b.Navigation("DriverLicenceImages");
+
+                    b.Navigation("PIDImages");
                 });
 #pragma warning restore 612, 618
         }

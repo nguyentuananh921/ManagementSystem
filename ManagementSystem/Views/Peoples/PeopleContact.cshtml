@@ -1,0 +1,95 @@
+﻿@model IEnumerable<ManagementSystem.Models.ViewModel.ViewModelPeopleContact>
+
+@{
+    ViewData["Title"] = "Danh sách nhân sự";
+}
+
+<!DOCTYPE html>
+@*<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css" rel="stylesheet" />*@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Danh sách chủ xe và lái xe</title>
+</head>
+<body>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table id="PeopeleDatatable" class="table table-striped table-bordered table-hover display nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th class="align-middle table-success">
+                    Họ và Tên
+                </th>
+                <th class="align-middle table-success">
+                    Số điện thoại
+                </th>
+                <th class="align-middle table-success">
+                    Lần gọi cuối
+                </th>
+                <th class="align-middle table-success">
+                    Trạng Thái
+                </th>
+                <th class="align-middle table-success">
+                    Ghi chú
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    <a asp-controller="Peoples" asp-action="Edit" asp-route-id="@item.PeopleID" class="btn btn-primary btn-sm rounded-0"><i class="fas fa-user-edit"></i></a>
+                    <a asp-controller="Peoples" asp-action="Details" asp-route-id="@item.PeopleID" class="btn btn-success btn-sm rounded-0"><i class="fas fa-info-circle"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.PeopleID" class="btn btn-danger btn-sm rounded-0"><i class="danger fa fa-trash"></i></a>
+                    @Html.DisplayFor(modelItem => item.PeopleName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastCall)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberStatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberNote)
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    @section scripts
+    {
+
+        @*<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.22/js/dataTables.jqueryui.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>*@
+
+        <script>
+            $(document).ready(function () {
+                $('#PeopeleDatatable').DataTable
+                    ({
+                        scrollX: true
+                    });
+            }
+            );
+        </script>
+    }
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

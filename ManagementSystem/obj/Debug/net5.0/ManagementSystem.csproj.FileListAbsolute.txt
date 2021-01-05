@@ -989,9 +989,15 @@ D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5
 D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Details.cshtml.g.cs
 D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Edit.cshtml.g.cs
 D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Index.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Peoples\PeopeleContact.cshtml.g.cs
 D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Create.cshtml.g.cs
 D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Delete.cshtml.g.cs
 D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Details.cshtml.g.cs
 D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Edit.cshtml.g.cs
 D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Index.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Create.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Delete.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Details.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Edit.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Index.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Peoples\PeopleContact.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.csprojAssemblyReference.cache

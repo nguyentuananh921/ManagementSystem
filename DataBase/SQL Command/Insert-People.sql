@@ -6,5 +6,6 @@ GO
 
 SET IDENTITY_INSERT Peoples ON
 
+select * from Peoples where PeopleID=185 or PeopleID=187
 
-
+delete from Peoples where PeopleID=185 

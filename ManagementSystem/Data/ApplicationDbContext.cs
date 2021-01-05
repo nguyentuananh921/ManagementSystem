@@ -22,7 +22,9 @@ namespace ManagementSystem.Data
         public DbSet<CarInspection> CarInspections { get; set; }
         public DbSet<CarRegistration> CarRegistrations { get; set; }
         public DbSet<CarDriver> CarDrivers { get; set; }
-        public DbSet<LocationCompany> LocationCompanies { get; set; }       
+        public DbSet<LocationCompany> LocationCompanies { get; set; }
+        public DbSet<PIDImage> PIDImages { get; set; }
+        public DbSet<DriverLicenceImage> DriverLicenceImages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

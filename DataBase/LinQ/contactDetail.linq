@@ -1,6 +1,6 @@
 <Query Kind="Statements">
   <Connection>
-    <ID>59c0d508-54aa-42dd-9a26-c8ca11011e91</ID>
+    <ID>5a5988b1-f30a-4d72-8c3b-3a577fae77dd</ID>
     <NamingServiceVersion>2</NamingServiceVersion>
     <Persist>true</Persist>
     <Server>.</Server>
@@ -35,7 +35,10 @@ from p in Peoples
 	{	
 		PeopleID = p.PeopleID,
 		PeopleName=p.PeopleName,
-		ContactNo=detail.ContactNo
+		ContactNo=detail.ContactNo,
+		LastCall=detail.LastCall,
+		NumberStatus=detail.NumberStatus,
+		NumberNote=detail.NumberNote
 	}
 	
 	from p in Peoples 
