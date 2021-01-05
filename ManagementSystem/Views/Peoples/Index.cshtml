@@ -5,9 +5,9 @@
 }
 
 <!DOCTYPE html>
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+@*<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css" rel="stylesheet" />*@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -38,7 +38,7 @@
                 <th class="align-middle table-success">
                     @Html.DisplayNameFor(model => model.PeoplePIDNumber)
                 </th>
-                <th>
+                <th class="align-middle table-success">>
                     @Html.DisplayNameFor(model => model.PeoplePIDDate)
                 </th>
                 <th class="align-middle table-success">
@@ -90,9 +90,9 @@
     @section scripts
     {
 
-        <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+        @*<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.22/js/dataTables.jqueryui.min.js"></script>
-        <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>*@
 
         <script>
             $(document).ready(function () {

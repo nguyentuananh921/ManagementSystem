@@ -14,3 +14,5 @@ select * from Peoples where PeopleName ='Nguyễn Trọng Hải'
 select * from CarDrivers
 
 update CarDrivers set PeopleID=16 where CarID=2 and PeopleID=88
+
+select * from Peoples where PeopleID>180 and PeopleID <190
