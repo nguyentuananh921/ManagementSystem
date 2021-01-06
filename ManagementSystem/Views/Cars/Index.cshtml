@@ -7,7 +7,7 @@
 <h1>Hồ sơ xe</h1>
 
 <p>
-    <a asp-action="Create">Tạo mới</a>
+    <a asp-action="Create" class="btn btn-success">Tạo mới</a>
 </p>
 <table id="carOwner" class="table table-striped table-bordered table-hover display nowrap" style="width:100%">
     <thead>
@@ -76,11 +76,15 @@
         {
             <tr>
                 <td class="align-middle">
-                    @if (item.PeopleID!=null)
+                    @if (item.PeopleID != null)
                     {
-                    <a asp-controller="Peoples" asp-action="Edit" asp-route-id="@item.PeopleID"><i class="fas fa-user-edit"></i></a>
+                        <a asp-controller="Peoples" asp-action="Edit" asp-route-id="@item.PeopleID" class="btn btn-primary btn-sm rounded-0"><i class="fas fa-user-edit"></i></a>
+                        <a asp-controller="Peoples" asp-action="Details" asp-route-id="@item.PeopleID" class="btn btn-success btn-sm rounded-0"><i class="fas fa-info-circle"></i></a>
+                        @*<a asp-action="Delete" asp-route-id="@item.PeopleID" class="btn btn-danger btn-sm rounded-0"><i class="danger fa fa-trash"></i></a>*@
+                        
+                        @*<a asp-controller="Peoples" asp-action="Edit" asp-route-id="@item.PeopleID" class="btn btn-outline-info"><i class="fas fa-user-edit"></i></a>*@
                     }
-                    
+
                     @Html.DisplayFor(modelItem => item.PIDInfor.PeopleName)
                 </td>
                 <td class="align-middle">
@@ -95,7 +99,7 @@
                 </td>
 
                 <td class="align-middle">
-                    <a asp-controller="Cars" asp-action="Edit" asp-route-id="@item.CarID"> <i class="fas fa-car"></i>
+                    <a asp-controller="Cars" asp-action="Edit" asp-route-id="@item.CarID" class="btn btn-outline-primary"> <i class="fas fa-car"></i>
                     </a>
                     @Html.DisplayFor(modelItem => item.CarPlate)
                 </td>
@@ -108,8 +112,6 @@
                 <td class="align-middle">
                     @Html.DisplayFor(modelItem => item.CarModel.CarModelNumberOfSeat)
                 </td>
-
-
                 <td class="align-middle">
                     @Html.DisplayFor(modelItem => item.CarEngieNumber)
                 </td>

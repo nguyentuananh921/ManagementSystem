@@ -102,6 +102,10 @@ namespace ManagementSystem.Controllers
             }
             ViewData["CarModelID"] = new SelectList(_context.CarModels, "CarModelID", "CarModelModel", car.CarModelID);
             ViewData["PeopleID"] = new SelectList(_context.Peoples, "PeopleID", "PeopleName", car.PeopleID);
+
+            CarRegistration carRegistration =  _context.CarRegistrations.Where(c => c.CarID == id).Single();
+
+            //ViewData["CarRegistration"]= new List<CarRegistration> _contact
             return View(car);
         }
 

@@ -999,7 +999,6 @@ D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5
 D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Edit.cshtml.g.cs
 D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Index.cshtml.g.cs
 D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Peoples\PeopleContact.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.csprojAssemblyReference.cache
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.csprojAssemblyReference.cache
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Create.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Delete.cshtml.g.cs

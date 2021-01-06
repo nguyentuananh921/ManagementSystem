@@ -15,6 +15,7 @@
     <thead>
         <tr>
             <th class="align-middle table-success">
+
                 @Html.DisplayNameFor(model => model.CarInfor.CarPlate)
             </th>
 
@@ -49,7 +50,7 @@
             <th class="align-middle table-success">
                 @Html.DisplayNameFor(model => model.DriverNote)
             </th>
-            <th class="align-middle table-success"></th>
+            @*<th class="align-middle table-success"></th>*@
         </tr>
     </thead>
     <tbody>
@@ -63,11 +64,19 @@
             @*<tr class="@selectedRow">*@
             <tr>
                 <td class="align-middle">
-                    @*@Html.DisplayFor(modelItem => item.CarInfor.CarPlate)*@
-                    <a asp-controller="Cars" asp-action="Edit" asp-route-id="@item.CarInfor.CarID">@Html.DisplayFor(modelItem => item.CarInfor.CarPlate)</a>
+
+                    <a asp-controller="Cars" asp-action="Edit" asp-route-id="@item.CarInfor.CarID" class="btn btn-outline-primary">
+                        <i class="fas fa-car"></i>
+
+                    </a>
+                    @Html.DisplayFor(modelItem => item.CarInfor.CarPlate)
+                    
                 </td>
 
                 <td class="align-middle">
+                    <a asp-controller="Peoples" asp-action="Edit" asp-route-id="@item.PeopleID" class="btn btn-primary btn-sm rounded-0"><i class="fas fa-user-edit"></i></a>
+                    <a asp-controller="Peoples" asp-action="Details" asp-route-id="@item.PeopleID" class="btn btn-success btn-sm rounded-0"><i class="fas fa-info-circle"></i></a>
+                    @*<a asp-action="Delete" asp-route-id="@item.PeopleID" class="btn btn-danger btn-sm rounded-0"><i class="danger fa fa-trash"></i></a>*@
                     <a asp-controller="Peoples" asp-action="Edit" asp-route-id="@item.PIDInfor.PeopleID">@Html.DisplayFor(modelItem => item.PIDInfor.PeopleName)</a>
                 </td>
 
@@ -98,14 +107,14 @@
                 <td class="align-middle">
                     @Html.DisplayFor(modelItem => item.DriverNote)
                 </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ })*|
+                <!--<td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ })*|-->
                     @*<a asp-action="Edit" asp-route=""></a>*@
 
 
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    <!--@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                     @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                </td>
+                </td>-->
             </tr>
         }
     </tbody>
