@@ -18,83 +18,88 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-3">
-                    <form asp-action="Edit">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <input type="hidden" asp-for="CarID" />
-                        <div class="form-group">
-                            <label asp-for="CarPlate" class="control-label"></label>
-                            <input asp-for="CarPlate" class="form-control" />
-                            <span asp-validation-for="CarPlate" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="CarModelID" class="control-label">Chọn loại xe</label>
-                            <select class="form-control js-example-basic-single" asp-for="CarModelID" asp-items="ViewBag.CarModelID">
-                                <option value="Chọn loại xe" hidden disabled selected> Chọn loại xe</option>
-                            </select>
+                    <div class="card card-primary card-outline">
+                        <div class="card-body box-profile">
+                            <form asp-action="Edit">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <input type="hidden" asp-for="CarID" />
+                                <div class="form-group">
+                                    <label asp-for="CarPlate" class="control-label"></label>
+                                    <input asp-for="CarPlate" class="form-control" />
+                                    <span asp-validation-for="CarPlate" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="CarModelID" class="control-label">Chọn loại xe</label>
+                                    <select class="form-control js-example-basic-single" asp-for="CarModelID" asp-items="ViewBag.CarModelID">
+                                        <option value="Chọn loại xe" hidden disabled selected> Chọn loại xe</option>
+                                    </select>
 
-                            <span asp-validation-for="CarModelID" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="CarEngieNumber" class="control-label"></label>
-                            <input asp-for="CarEngieNumber" class="form-control" />
-                            <span asp-validation-for="CarEngieNumber" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="CarEngieChassisNumber" class="control-label"></label>
-                            <input asp-for="CarEngieChassisNumber" class="form-control" />
-                            <span asp-validation-for="CarEngieChassisNumber" class="text-danger"></span>
-                        </div>
+                                    <span asp-validation-for="CarModelID" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="CarEngieNumber" class="control-label"></label>
+                                    <input asp-for="CarEngieNumber" class="form-control" />
+                                    <span asp-validation-for="CarEngieNumber" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="CarEngieChassisNumber" class="control-label"></label>
+                                    <input asp-for="CarEngieChassisNumber" class="form-control" />
+                                    <span asp-validation-for="CarEngieChassisNumber" class="text-danger"></span>
+                                </div>
 
-                        <div class="form-group">
-                            <label asp-for="CarManufactureYear" class="control-label"></label>
-                            <input asp-for="CarManufactureYear" class="form-control" />
-                            <span asp-validation-for="CarManufactureYear" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="CarManufactureCountry" class="control-label"></label>
-                            <input asp-for="CarManufactureCountry" class="form-control" />
-                            <span asp-validation-for="CarManufactureCountry" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="LocationCompanyID" class="control-label"></label>
-                            <input asp-for="LocationCompanyID" class="form-control" />
-                            <span asp-validation-for="LocationCompanyID" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="LocationUser" class="control-label"></label>
-                            <input asp-for="LocationUser" class="form-control" />
-                            <span asp-validation-for="LocationUser" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="LocationPass" class="control-label"></label>
-                            <input asp-for="LocationPass" class="form-control" />
-                            <span asp-validation-for="LocationPass" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="LocationValidUntil" class="control-label"></label>
-                            <input asp-for="LocationValidUntil" class="form-control" />
-                            <span asp-validation-for="LocationValidUntil" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="PeopleID" class="control-label">Chọn tên chủ xe</label>
-                            <select class="form-control js-example-basic-single" asp-for="PeopleID" asp-items="ViewBag.PeopleID">
-                                <option value="Chọn chủ xe" hidden disabled selected> Chọn chủ xe</option>
-                            </select>
+                                <div class="form-group">
+                                    <label asp-for="CarManufactureYear" class="control-label"></label>
+                                    <input asp-for="CarManufactureYear" class="form-control" />
+                                    <span asp-validation-for="CarManufactureYear" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="CarManufactureCountry" class="control-label"></label>
+                                    <input asp-for="CarManufactureCountry" class="form-control" />
+                                    <span asp-validation-for="CarManufactureCountry" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="LocationCompanyID" class="control-label"></label>
+                                    <input asp-for="LocationCompanyID" class="form-control" />
+                                    <span asp-validation-for="LocationCompanyID" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="LocationUser" class="control-label"></label>
+                                    <input asp-for="LocationUser" class="form-control" />
+                                    <span asp-validation-for="LocationUser" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="LocationPass" class="control-label"></label>
+                                    <input asp-for="LocationPass" class="form-control" />
+                                    <span asp-validation-for="LocationPass" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="LocationValidUntil" class="control-label"></label>
+                                    <input asp-for="LocationValidUntil" class="form-control" />
+                                    <span asp-validation-for="LocationValidUntil" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="PeopleID" class="control-label">Chọn tên chủ xe</label>
+                                    <select class="form-control js-example-basic-single" asp-for="PeopleID" asp-items="ViewBag.PeopleID">
+                                        <option value="Chọn chủ xe" hidden disabled selected> Chọn chủ xe</option>
+                                    </select>
 
-                            <span asp-validation-for="PeopleID" class="text-danger"></span>
-                        </div>
+                                    <span asp-validation-for="PeopleID" class="text-danger"></span>
+                                </div>
 
-                        <div class="form-group">
-                            <label asp-for="CarOwnerNote" class="control-label"></label>
-                            <input asp-for="CarOwnerNote" class="form-control" />
-                            <span asp-validation-for="CarOwnerNote" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Save" class="btn btn-primary" />
-                        </div>
+                                <div class="form-group">
+                                    <label asp-for="CarOwnerNote" class="control-label"></label>
+                                    <input asp-for="CarOwnerNote" class="form-control" />
+                                    <span asp-validation-for="CarOwnerNote" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Save" class="btn btn-primary" />
+                                </div>
 
 
-                    </form>
+                            </form>
+                        </div>
+                    </div>
+                    
                     
                 </div>
                 <div class="col-md-9">
