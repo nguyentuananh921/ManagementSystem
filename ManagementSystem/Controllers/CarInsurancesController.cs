@@ -61,18 +61,20 @@ namespace ManagementSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CarID,CarInsuranceDate,CarInsuranceValidUntil,CarInsuranceImagePath")] CarInsurance carInsurance)
+        public async Task<IActionResult> Create([Bind("CarID,CarInsuranceDate,CarInsuranceValidUntil,CarInsuranceImagePath,ImageFile")] CarInsurance carInsurance)
         {
+
+
             if (ModelState.IsValid)
             {
                 //Save image to wwwwroot/img.
                 string wwwRootPath = _hostEnvironment.WebRootPath;
                 var car = carInsurance.CarInfo;
                 //Check
-                int carid = carInsurance.CarInfo.CarID;
-                string carplate = carInsurance.CarInfo.CarPlate;
+                int carid = carInsurance.CarID;
+                string carplate = _context.Cars.Find(carid).CarPlate;//carInsurance.CarInfo.CarPlate;
                 //
-                string savePath = wwwRootPath + "/img/Cars/" + carInsurance.CarInfo.CarPlate;
+                string savePath = wwwRootPath + "/img/Cars/" + carplate;
 
 
                 if (!Directory.Exists(savePath))
@@ -84,7 +86,7 @@ namespace ManagementSystem.Controllers
                 string extension = Path.GetExtension(carInsurance.ImageFile.FileName);
 
                 string datestring = carInsurance.CarInsuranceDate.Value.ToString("yyyy-MM-dd");
-                carInsurance.CarInsuranceImagePath=filename=carInsurance.CarInfo.CarPlate + " " + datestring + Guid.NewGuid() + extension;
+                carInsurance.CarInsuranceImagePath=filename= carplate + " Bảo hiểm " + datestring +" " + Guid.NewGuid() + extension;
 
                 string path = Path.Combine(savePath, filename);
 
