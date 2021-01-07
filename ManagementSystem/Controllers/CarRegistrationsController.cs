@@ -29,14 +29,7 @@ namespace ManagementSystem.Controllers
             var applicationDbContext = _context.CarRegistrations.Include(c => c.CarInfor).Include(c => c.PIDInfor);
             return View(await applicationDbContext.ToListAsync());
         }
-        public async Task<IActionResult> RegistraionList(int carID)
-        {
-            //var applicationDbContext = _context.CarRegistrations.Include(c => c.CarInfor).Include(c => c.PIDInfor);
-            var carRegistration = _context.CarRegistrations.Include(c => c.CarInfor).Include(c => c.PIDInfor)
-                                .FirstOrDefaultAsync(m => m.CarRegistrationID == carID);
-
-            return View(await carRegistration);
-        }
+        
         // GET: CarRegistrations/Details/5
         public async Task<IActionResult> Details(int? id)
         {

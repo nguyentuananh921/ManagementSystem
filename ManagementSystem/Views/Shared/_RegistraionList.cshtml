@@ -1,0 +1,87 @@
+﻿
+@model IEnumerable<ManagementSystem.Models.CarRegistration>
+
+@{
+    ViewData["Title"] = "Danh sách đăng ký xe";
+}
+
+<h1>Danh sách đăng ký xe</h1>
+
+<p>
+    <a asp-action="Create">Tạo mới</a>
+</p>
+<table id="carRegistration" class="table table-striped table-bordered table-hover display nowrap" style="width:100%">
+    <thead>
+        <tr>
+            <th class="align-middle table-success">
+                @Html.DisplayNameFor(model => model.CarInfor.CarPlate)
+            </th>
+            <th class="align-middle table-success">
+                @Html.DisplayNameFor(model => model.PIDInfor.PeopleName)
+            </th>
+            <th class="align-middle table-success">
+                @Html.DisplayNameFor(model => model.CarPlate)
+            </th>
+            <th class="align-middle table-success">
+                @Html.DisplayNameFor(model => model.CarPlateColor)
+            </th>
+            <th class="align-middle table-success">
+                @Html.DisplayNameFor(model => model.CarDateofFirstRegistration)
+            </th>
+            <th class="align-middle table-success">
+                @Html.DisplayNameFor(model => model.CarDateRegistration)
+            </th>
+            <th class="align-middle table-success">
+                @Html.DisplayNameFor(model => model.CarRegistrationNote)
+            </th>
+            <th class="align-middle table-success"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.CarInfor.CarPlate)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.PIDInfor.PeopleName)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.CarPlate)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.CarPlateColor)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.CarDateofFirstRegistration)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.CarDateRegistration)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.CarRegistrationNote)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CarRegistrationID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.CarRegistrationID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.CarRegistrationID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section scripts
+    {
+
+
+    <script>
+        $(document).ready(function () {
+            $('#carRegistration').DataTable
+                ({
+                    scrollX: true
+                });
+        }
+        );
+    </script>
+}

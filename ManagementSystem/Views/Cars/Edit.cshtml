@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Edit";
 }
+
+
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 
 <div class="content-wrapper">
@@ -10,7 +12,7 @@
         <div class="container-fluid">
             <h1>Chỉnh sửa</h1>
             <h4>Thông tin xe @Model.CarPlate</h4>
-            <hr />            
+            <hr />
         </div><!-- /.container-fluid -->
     </section>
     <!-- Main content -->
@@ -99,8 +101,8 @@
                             </form>
                         </div>
                     </div>
-                    
-                    
+
+
                 </div>
                 <div class="col-md-9">
                     <div class="card">
@@ -382,11 +384,78 @@
                     </div>
                 </div>
             </div>
-        </div>       
+        </div>
     </section>
     <div>
         <a asp-action="Index">Back to List</a>
     </div>
+    @{
+        IEnumerable<CarRegistration> carRegs = ViewData["CarRegistration"] as IEnumerable<CarRegistration>;
+    }
+    <table id="carRegistration" class="table table-striped table-bordered table-hover display nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th class="align-middle table-success">
+                    
+                </th>
+                <th class="align-middle table-success">
+                    
+                </th>
+                <th class="align-middle table-success">
+                    
+                </th>
+                <th class="align-middle table-success">
+                    
+                </th>
+                <th class="align-middle table-success">
+                    
+                </th>
+                <th class="align-middle table-success">
+                    
+                </th>
+                <th class="align-middle table-success">
+                    
+                </th>
+                <th class="align-middle table-success"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (CarRegistration item in carRegs)
+            {
+                <tr>
+                    <td class="align-middle">
+                        @item.CarDateofFirstRegistration
+                    </td>
+
+                    <td class="align-middle">
+                        @item.CarDateRegistration
+                    </td>
+                    <td class="align-middle">
+                        
+                    </td>
+                    <td class="align-middle">
+                        
+                    </td>
+                    <td class="align-middle">
+                        
+                    </td>
+                    <td class="align-middle">
+                        
+                    </td>
+                    <td class="align-middle">
+                        
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.CarRegistrationID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.CarRegistrationID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.CarRegistrationID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
 </div>
 
 @section Scripts {

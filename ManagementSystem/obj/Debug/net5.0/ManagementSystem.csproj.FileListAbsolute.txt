@@ -1011,5 +1011,6 @@ F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Edit.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Index.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Peoples\PeopleContact.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Shared\_RegistraionList.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Cars\RegistraionList.cshtml.g.cs
 D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.csprojAssemblyReference.cache
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarRegistrations\RegistraionList.cshtml.g.cs
