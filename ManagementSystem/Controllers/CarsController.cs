@@ -141,9 +141,11 @@ namespace ManagementSystem.Controllers
             }
             ViewData["CarModelID"] = new SelectList(_context.CarModels, "CarModelID", "CarModelModel", car.CarModelID);
             ViewData["PeopleID"] = new SelectList(_context.Peoples, "PeopleID", "PeopleName", car.PeopleID);
-            
-            var carRegistration = await _context.Cars.Include(c => c.CarRegistrations).Where(c => c.CarID == id).ToListAsync();
 
+            //var carRegistration = await _context.Cars.Include(c => c.CarRegistrations).Where(c => c.CarID == id).ToListAsync();
+            //ViewData["CarRegistration"] = carRegistration;
+            //var carRegistration = _context.Cars.Include(c => c.CarRegistrations).Where(c => c.CarID == id).ToList();
+            var carRegistration = _context.CarRegistrations.Include(c => c.CarInfor).Where(c => c.CarID == id).ToList();
             ViewData["CarRegistration"] = carRegistration;
             //List<CarRegistration> carReg = new _context.CarRegistrations.Where(c => c.CarID == id).SingleOrDefaultAsync();
             //CarRegistration carRegistration =  _context.CarRegistrations.Where(c => c.CarID == id).Single();

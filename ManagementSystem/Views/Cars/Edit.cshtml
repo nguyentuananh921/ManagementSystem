@@ -108,10 +108,10 @@
                     <div class="card">
                         <div class="card-header p-2">
                             <ul class="nav nav-pills">
-                                <li class="nav-item"><a class="nav-link" href="#" data-toggle="tab">Đăng ký</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#" data-toggle="tab">Đăng kiểm</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#" data-toggle="tab">Bảo hiểm</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#" data-toggle="tab">Định vị</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#carRegistration" data-toggle="tab">Đăng ký</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#carInspection" data-toggle="tab">Đăng kiểm</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#carInsurance" data-toggle="tab">Bảo hiểm</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#carLocation" data-toggle="tab">Định vị</a></li>
 
                                 <li class="nav-item"><a class="nav-link" href="#activity" data-toggle="tab">Activity</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Timeline</a></li>
@@ -120,7 +120,77 @@
                         </div>
                         <div class="card-body">
                             <div class="tab-content">
-                                <div class="active tab-pane" id="activity">
+                                <div class="active tab-pane" id="carRegistration">
+                                    Push your Registration image here
+                                    <table id="carRegistration" class="table table-striped table-bordered table-hover display nowrap" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th class="align-middle table-success">
+
+                                                </th>
+                                                <th class="align-middle table-success">
+
+                                                </th>
+                                                <th class="align-middle table-success">
+
+                                                </th>
+                                                <th class="align-middle table-success">
+
+                                                </th>
+                                                <th class="align-middle table-success">
+
+                                                </th>
+                                                <th class="align-middle table-success">
+
+                                                </th>
+                                                <th class="align-middle table-success">
+
+                                                </th>
+                                                <th class="align-middle table-success"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (CarRegistration carReg in Model.CarRegistrations)
+                                            {
+                                                <tr>
+                                                    <td class="align-middle">
+                                                        @carReg.CarDateofFirstRegistration
+                                                    </td>
+
+                                                    <td class="align-middle">
+                                                        @carReg.CarDateRegistration
+                                                    </td>
+                                                    <td class="align-middle">
+                                                    </td>
+                                                    <td class="align-middle">
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        <img id="blah" src="@("~/img/Cars/"+Model.CarPlate+"/"+ carReg.CarRegistrationImageUrl)" asp-append-version="true" width="100%" height="auto" />
+                                                    </td>
+                                                    <td class="align-middle">
+                                                    </td>
+                                                    <td class="align-middle">
+                                                    </td>
+                                                    @*<td>
+                            <a asp-action="Edit" asp-route-id="@item.CarRegistrationID">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.CarRegistrationID">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.CarRegistrationID">Delete</a>
+                        </td>*@
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tab-pane" id="carInspection">
+                                    Push your carInspection image here
+                                </div>
+                                <div class="tab-pane" id="carInsurance">
+                                    Push your carInsurance image here
+                                </div>
+                                <div class="tab-pane" id="carLocation">
+                                    Push your carLocation image here
+                                </div>
+                                <div class="tab-pane" id="activity">
                                     <!-- Post -->
                                     <div class="post">
                                         <div class="user-block">
@@ -390,31 +460,33 @@
         <a asp-action="Index">Back to List</a>
     </div>
     @{
-        IEnumerable<CarRegistration> carRegs = ViewData["CarRegistration"] as IEnumerable<CarRegistration>;
+        //IEnumerable<CarRegistration> carRegs = ViewData["CarRegistration"] as IEnumerable<CarRegistration>;
+        var carRegs = (IEnumerable<CarRegistration>)ViewData["CarRegistration"];
+        int check = 0;
     }
     <table id="carRegistration" class="table table-striped table-bordered table-hover display nowrap" style="width:100%">
         <thead>
             <tr>
                 <th class="align-middle table-success">
-                    
+
                 </th>
                 <th class="align-middle table-success">
-                    
+
                 </th>
                 <th class="align-middle table-success">
-                    
+
                 </th>
                 <th class="align-middle table-success">
-                    
+
                 </th>
                 <th class="align-middle table-success">
-                    
+
                 </th>
                 <th class="align-middle table-success">
-                    
+
                 </th>
                 <th class="align-middle table-success">
-                    
+
                 </th>
                 <th class="align-middle table-success"></th>
             </tr>
@@ -431,19 +503,14 @@
                         @item.CarDateRegistration
                     </td>
                     <td class="align-middle">
-                        
                     </td>
                     <td class="align-middle">
-                        
                     </td>
                     <td class="align-middle">
-                        
                     </td>
                     <td class="align-middle">
-                        
                     </td>
                     <td class="align-middle">
-                        
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.CarRegistrationID">Edit</a> |
@@ -456,6 +523,9 @@
     </table>
 
 
+
+
+    
 </div>
 
 @section Scripts {

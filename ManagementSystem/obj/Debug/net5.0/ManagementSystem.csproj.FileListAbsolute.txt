@@ -483,6 +483,30 @@ D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5
 D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarDrivers\Details.cshtml.g.cs
 D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarDrivers\Edit.cshtml.g.cs
 D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarDrivers\Index.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarRegistrations\Create.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarRegistrations\Delete.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarRegistrations\Details.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarRegistrations\Edit.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarRegistrations\Index.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Create.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Delete.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Details.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Edit.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Index.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Create.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Delete.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Details.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Edit.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Index.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Create.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Delete.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Details.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Edit.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Index.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Peoples\PeopleContact.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Shared\_RegistraionList.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Cars\RegistraionList.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.csprojAssemblyReference.cache
 F:\Code learning\ManagementSystem\ManagementSystem\bin\Debug\net5.0\appsettings.Development.json
 F:\Code learning\ManagementSystem\ManagementSystem\bin\Debug\net5.0\appsettings.json
 F:\Code learning\ManagementSystem\ManagementSystem\bin\Debug\net5.0\ManagementSystem.StaticWebAssets.xml
@@ -931,6 +955,16 @@ F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarDrivers\Details.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarDrivers\Edit.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarDrivers\Index.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Create.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Delete.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Details.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Edit.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Index.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Create.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Delete.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Details.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Edit.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Index.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarModels\Create.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarModels\Delete.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarModels\Details.cshtml.g.cs
@@ -946,6 +980,7 @@ F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Cars\Details.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Cars\Edit.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Cars\Index.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Cars\RegistraionList.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Create.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Delete.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Details.cshtml.g.cs
@@ -958,6 +993,7 @@ F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Peoples\Details.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Peoples\Edit.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Peoples\Index.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Peoples\PeopleContact.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Shared\AdminLTE\_Footer.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Shared\AdminLTE\_Layout.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Shared\AdminLTE\_MainNavigation.cshtml.g.cs
@@ -967,6 +1003,7 @@ F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Shared\_RegistraionList.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
@@ -978,39 +1015,3 @@ F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSy
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ref\ManagementSystem.dll
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.pdb
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.genruntimeconfig.cache
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarRegistrations\Create.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarRegistrations\Delete.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarRegistrations\Details.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarRegistrations\Edit.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarRegistrations\Index.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Create.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Delete.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Details.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Edit.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Contacts\Index.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Create.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Delete.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Details.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Edit.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Index.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Create.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Delete.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Details.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Edit.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Index.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Peoples\PeopleContact.cshtml.g.cs
-F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.csprojAssemblyReference.cache
-F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Create.cshtml.g.cs
-F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Delete.cshtml.g.cs
-F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Details.cshtml.g.cs
-F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Edit.cshtml.g.cs
-F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInspections\Index.cshtml.g.cs
-F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Create.cshtml.g.cs
-F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Delete.cshtml.g.cs
-F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Details.cshtml.g.cs
-F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Edit.cshtml.g.cs
-F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\CarInsurances\Index.cshtml.g.cs
-F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Peoples\PeopleContact.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Shared\_RegistraionList.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\Cars\RegistraionList.cshtml.g.cs
-D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.csprojAssemblyReference.cache
