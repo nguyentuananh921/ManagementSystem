@@ -13,6 +13,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Cars.CarPlate)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.InspectionDate)
             </th>
             <th>
@@ -21,15 +24,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.CarInspectionImagePath)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cars)
-            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cars.CarPlate)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.InspectionDate)
             </td>
@@ -39,9 +42,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CarInspectionImagePath)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cars.CarID)
-            </td>
+
             <td>
                 <a asp-action="Edit" asp-route-id="@item.CarInspectionID">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.CarInspectionID">Details</a> |

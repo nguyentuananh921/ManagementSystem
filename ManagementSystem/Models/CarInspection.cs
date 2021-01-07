@@ -6,6 +6,10 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 using ManagementSystem.Models;
 using System.ComponentModel.DataAnnotations.Schema;
+using ManagementSystem.Data;
+using Microsoft.AspNetCore.Http;
+using System.ComponentModel;
+
 
 namespace ManagementSystem.Models
 {
@@ -30,7 +34,11 @@ namespace ManagementSystem.Models
 
         //Realation ship one to many. A car have many CarInsurance.
         public Car Cars { get; set; }
-        
+
+        //For the Front Image
+        [NotMapped]
+        [DisplayName("Upload File")]
+        public IFormFile ImageFile { get; set; }
 
 
     }

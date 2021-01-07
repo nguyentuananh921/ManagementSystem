@@ -1,16 +1,16 @@
 ﻿@model ManagementSystem.Models.CarInspection
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Thêm mới đăng kiểm";
 }
 
-<h1>Create</h1>
+<h1>Thêm mới</h1>
 
-<h4>CarInspection</h4>
+<h4>Đăng kiểm xe</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+<form asp-action="Create" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-3">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="CarID" class="control-label">Chọn biển số xe</label>
@@ -37,11 +37,57 @@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
-        </form>
+        </div>
+        <div class="col-md-9">
+            <img id="blah" src="#" asp-append-version="true" />
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label"></label>
+                <input type="hidden" asp-for="CarInspectionImagePath" />
+                <input asp-for="ImageFile" id="imgInp" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+        </div>
     </div>
-</div>
-
+  
+</form>
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
+
+<!-- For Select 2 Dropdownlist-->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
+
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#blah').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]); // convert to base64 string
+            }
+        }
+        $("#imgInp").change(function () {
+            readURL(this);
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-single').select2();
+        });
+    </script>
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+
+
+
 
