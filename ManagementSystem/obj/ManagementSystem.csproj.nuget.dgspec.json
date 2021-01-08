@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Coding Learning\\7. Home Task\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj": {}
+    "F:\\Code learning\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj": {}
   },
   "projects": {
-    "D:\\Coding Learning\\7. Home Task\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj": {
+    "F:\\Code learning\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Coding Learning\\7. Home Task\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj",
+        "projectUniqueName": "F:\\Code learning\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj",
         "projectName": "ManagementSystem",
-        "projectPath": "D:\\Coding Learning\\7. Home Task\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj",
+        "projectPath": "F:\\Code learning\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj",
         "packagesPath": "C:\\Users\\Nguyen Tuan Anh\\.nuget\\packages\\",
-        "outputPath": "D:\\Coding Learning\\7. Home Task\\ManagementSystem\\ManagementSystem\\obj\\",
+        "outputPath": "F:\\Code learning\\ManagementSystem\\ManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -104,7 +104,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

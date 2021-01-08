@@ -55,8 +55,7 @@ namespace ManagementSystem.Controllers
                                 .ToListAsync();
             //var applicationDbContext = _context.Cars.Include(c => c.CarModel).Include(c => c.PIDInfor).Include(c => c.LocationCompanyID);
             return View(carvm);
-        }
-       
+        }     
 
 
         // GET: Cars/Details/5
@@ -127,6 +126,8 @@ namespace ManagementSystem.Controllers
         //    //ViewData["CarRegistration"]= new List<CarRegistration> _contact
         //    return View(car);
         //}
+
+        // GET: Cars/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -135,22 +136,23 @@ namespace ManagementSystem.Controllers
             }
 
             var car = await _context.Cars.FindAsync(id);
+            
             if (car == null)
             {
                 return NotFound();
             }
             ViewData["CarModelID"] = new SelectList(_context.CarModels, "CarModelID", "CarModelModel", car.CarModelID);
             ViewData["PeopleID"] = new SelectList(_context.Peoples, "PeopleID", "PeopleName", car.PeopleID);
-
-            //var carRegistration = await _context.Cars.Include(c => c.CarRegistrations).Where(c => c.CarID == id).ToListAsync();
-            //ViewData["CarRegistration"] = carRegistration;
-            //var carRegistration = _context.Cars.Include(c => c.CarRegistrations).Where(c => c.CarID == id).ToList();
+            
             var carRegistration = _context.CarRegistrations.Include(c => c.CarInfor).Where(c => c.CarID == id).ToList();
             ViewData["CarRegistration"] = carRegistration;
-            //List<CarRegistration> carReg = new _context.CarRegistrations.Where(c => c.CarID == id).SingleOrDefaultAsync();
-            //CarRegistration carRegistration =  _context.CarRegistrations.Where(c => c.CarID == id).Single();
 
-            //ViewData["CarRegistration"]= new List<CarRegistration> _contact
+            var carInspection = _context.CarInspections.Include(c => c.Cars).Where(c => c.CarID == id).ToList();
+            ViewData["CarInspections"] = carInspection;
+            var carInsurance = _context.CarInsurances.Include(c => c.CarInfo).Where(c => c.CarID == id).ToList();
+            ViewData["CarInsurances"] = carInsurance;
+
+
             return View(car);
         }
         // POST: Cars/Edit/5

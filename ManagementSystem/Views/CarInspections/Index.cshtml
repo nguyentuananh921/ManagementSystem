@@ -1,54 +1,69 @@
 ﻿@model IEnumerable<ManagementSystem.Models.CarInspection>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Đăng kiểm xe";
 }
 
-<h1>Index</h1>
+<h1>Danh sách đăng kiểm xe</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Tạo mới</a>
 </p>
-<table class="table">
+<table id="carInspections" class="table table-striped table-bordered table-hover display nowrap" style="width:100%">
     <thead>
         <tr>
-            <th>
+            <th class="align-middle table-success">
                 @Html.DisplayNameFor(model => model.Cars.CarPlate)
             </th>
-            <th>
+            <th class="align-middle table-success">
                 @Html.DisplayNameFor(model => model.InspectionDate)
             </th>
-            <th>
+            <th class="align-middle table-success">
                 @Html.DisplayNameFor(model => model.CarInspectionValidUntil)
             </th>
-            <th>
+            <th class="align-middle table-success">
                 @Html.DisplayNameFor(model => model.CarInspectionImagePath)
             </th>
-            <th></th>
+            <th class="align-middle table-success"></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cars.CarPlate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.InspectionDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarInspectionValidUntil)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarInspectionImagePath)
-            </td>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cars.CarPlate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InspectionDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarInspectionValidUntil)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarInspectionImagePath)
+                </td>
 
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CarInspectionID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CarInspectionID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CarInspectionID">Delete</a>
-            </td>
-        </tr>
-}
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CarInspectionID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.CarInspectionID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.CarInspectionID">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+@section scripts
+    {
+
+
+    <script>
+        $(document).ready(function () {
+            $('#carInspections').DataTable
+                ({
+                    scrollX: true
+                });
+        }
+        );
+    </script>
+}

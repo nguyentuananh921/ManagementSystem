@@ -30,11 +30,11 @@
                 <input asp-for="CarInspectionValidUntil" class="form-control" />
                 <span asp-validation-for="CarInspectionValidUntil" class="text-danger"></span>
             </div>
-            @*<div class="form-group">
-                    <label asp-for="CarInspectionImagePath" class="control-label"></label>
-                    <input asp-for="CarInspectionImagePath" class="form-control" />
+            <div class="form-group">
+                    @*<label asp-for="CarInspectionImagePath" class="control-label"></label>*@
+                    <input type="hidden" asp-for="CarInspectionImagePath" class="form-control" />
                     <span asp-validation-for="CarInspectionImagePath" class="text-danger"></span>
-                </div>*@
+                </div>
         </div>
         <div class="col-md-9">
             <img id="blah" src="@("~/img/Cars/"+Model.Cars.CarPlate+"/"+ Model.CarInspectionImagePath)" asp-append-version="true" />

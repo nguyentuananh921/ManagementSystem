@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ManagementSystem.Models.PIDImage>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PIDFront)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PIDBack)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PIDInfor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PIDFront)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PIDBack)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PIDInfor.PeopleName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

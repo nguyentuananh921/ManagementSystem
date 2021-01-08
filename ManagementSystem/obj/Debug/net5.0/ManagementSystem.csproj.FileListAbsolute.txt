@@ -1015,3 +1015,9 @@ F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSy
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ref\ManagementSystem.dll
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.pdb
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.genruntimeconfig.cache
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\PIDImages\Create.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\PIDImages\Delete.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\PIDImages\Details.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\PIDImages\Edit.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\PIDImages\Index.cshtml.g.cs
+F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.csprojAssemblyReference.cache

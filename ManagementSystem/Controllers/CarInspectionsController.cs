@@ -112,7 +112,7 @@ namespace ManagementSystem.Controllers
             {
                 return NotFound();
             }
-            ViewData["CarID"] = new SelectList(_context.Cars, "CarID", "CarID", carInspection.CarID);
+            ViewData["CarID"] = new SelectList(_context.Cars, "CarID", "CarPlate", carInspection.CarID);
             return View(carInspection);
         }
 

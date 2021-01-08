@@ -1,23 +1,5 @@
-USE ManagementSystem
-GO
+select * from Cars  where CarPlate='30F-63740'
 
-SELECT Cars.CarID
-      ,Cars.CarModelID	  
-      ,Carmodels.CarModelVendor
-      ,Carmodels.CarModelModel
-      ,Carmodels.CarModelNumberOfSeat
-      ,Cars.CarEngieNumber
-      ,Cars.CarEngieChassisNumber
-      ,Cars.CarManufactureYear
-      ,Cars.CarManufactureCountry
-      ,Cars.LocationCompanyID
-      ,Cars.LocationUser
-      ,Cars.LocationPass
-      ,Cars.LocationValidUntil
-	  
-  FROM Cars,Carmodels
-  where Cars.CarModelID=CarModels.CarModelID
+update Cars set CarPlate='30F-637.40' where CarID=255
 
-GO
-
-
+select * from Cars where CarID=255

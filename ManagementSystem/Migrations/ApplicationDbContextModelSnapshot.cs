@@ -620,7 +620,7 @@ namespace ManagementSystem.Migrations
             modelBuilder.Entity("ManagementSystem.Models.CarInspection", b =>
                 {
                     b.HasOne("ManagementSystem.Models.Car", "Cars")
-                        .WithMany()
+                        .WithMany("CarInspections")
                         .HasForeignKey("CarID");
 
                     b.Navigation("Cars");
@@ -629,7 +629,7 @@ namespace ManagementSystem.Migrations
             modelBuilder.Entity("ManagementSystem.Models.CarInsurance", b =>
                 {
                     b.HasOne("ManagementSystem.Models.Car", "CarInfo")
-                        .WithMany()
+                        .WithMany("CarInsurances")
                         .HasForeignKey("CarID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -747,6 +747,10 @@ namespace ManagementSystem.Migrations
 
             modelBuilder.Entity("ManagementSystem.Models.Car", b =>
                 {
+                    b.Navigation("CarInspections");
+
+                    b.Navigation("CarInsurances");
+
                     b.Navigation("CarRegistrations");
                 });
 

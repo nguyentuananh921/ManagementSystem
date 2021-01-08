@@ -64,9 +64,9 @@ namespace ManagementSystem.Models
         public ICollection<CarRegistration> CarRegistrations { get; set; }
 
         public LocationCompany LCompany { get; set; }
-        //public ICollection<CarInsurance> CarInsurances { get; set; }
+        public ICollection<CarInsurance> CarInsurances { get; set; }
 
-        //public ICollection<CarInspection> CarInspections { get; set; }
+        public ICollection<CarInspection> CarInspections { get; set; }
 
         public CarModel CarModel { get; set; }     
         //public ICollection <CarDriverAssignment> CarDriverAssignments { get; set; }

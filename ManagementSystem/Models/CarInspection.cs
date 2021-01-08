@@ -21,12 +21,14 @@ namespace ManagementSystem.Models
         public int? CarID { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]        
         [Display(Name = "Ngày kiểm định")]
         public DateTime? InspectionDate { get; set; }
 
+
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        
         [Display(Name = "Ngày hết hạn")]
         public DateTime? CarInspectionValidUntil { get; set; }
 
