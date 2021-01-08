@@ -52,10 +52,6 @@ namespace ManagementSystem
                 facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
                 facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
             });
-
-
-
-
             services.AddControllersWithViews();
         }
 

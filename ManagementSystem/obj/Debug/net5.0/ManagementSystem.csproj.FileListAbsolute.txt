@@ -1021,3 +1021,8 @@ F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\PIDImages\Edit.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\PIDImages\Index.cshtml.g.cs
 F:\Code learning\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.csprojAssemblyReference.cache
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\PIDImages\Create.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\PIDImages\Delete.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\PIDImages\Details.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\PIDImages\Edit.cshtml.g.cs
+D:\Coding Learning\7. Home Task\ManagementSystem\ManagementSystem\obj\Debug\net5.0\Razor\Views\PIDImages\Index.cshtml.g.cs

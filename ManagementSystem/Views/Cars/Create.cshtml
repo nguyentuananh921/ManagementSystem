@@ -14,7 +14,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="CarModelID" class="control-label"></label>
-                <select asp-for="CarModelID" class ="form-control" asp-items="ViewBag.CarModelID"></select>
+                <select asp-for="CarModelID" class="form-control" asp-items="ViewBag.CarModelID"></select>
             </div>
             <div class="form-group">
                 <label asp-for="CarEngieNumber" class="control-label"></label>
@@ -57,8 +57,11 @@
                 <span asp-validation-for="LocationValidUntil" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PeopleID" class="control-label"></label>
-                <select asp-for="PeopleID" class ="form-control" asp-items="ViewBag.PeopleID"></select>
+                <label asp-for="PeopleID" class="control-label">Chọn tên chủ xe</label>
+                <select class="form-control js-example-basic-single" asp-for="PeopleID" asp-items="ViewBag.PeopleID">
+                    <option value="Chọn chủ xe" hidden disabled selected> Chọn chủ xe</option>
+                </select>               
+
             </div>
             <div class="form-group">
                 <label asp-for="CarPlate" class="control-label"></label>
@@ -82,5 +85,11 @@
 </div>
 
 @section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-single').select2();
+        });
+    </script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

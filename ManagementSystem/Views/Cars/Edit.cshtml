@@ -5,6 +5,7 @@
 }
 
 
+
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 <div class="container-fluid">
     <h1>Chỉnh sửa</h1>
@@ -130,7 +131,7 @@
                                             <div class="timeline-item">
                                                 <h3 class="timeline-header">@carReg.PIDInfor.PeopleName</h3>
                                                 @carReg.CarRegistrationNote
-                                                <img id="blah" src="@("~/img/Cars/"+Model.CarPlate+"/"+ carReg.CarRegistrationImageUrl)" asp-append-version="true" width="100%" height="auto" />
+                                                <img id="blah" src="@("~/img/Cars/" + Model.CarPlate + "/" + carReg.CarRegistrationImageUrl)" asp-append-version="true" width="100%" height="auto" />
                                             </div>
 
                                         </div>
@@ -146,8 +147,29 @@
                                 </div>
                                 <div class="timeline-item">
                                     <div class="timeline-footer">
-                                        <a href="#" class="btn btn-primary btn-sm">Read more</a>
+                                        @*<a href="#" class="btn btn-primary btn-sm">Read more</a>
                                         <a href="#" class="btn btn-danger btn-sm">Delete</a>
+
+
+                                        <form enctype="multipart/form-data" method="post" action="/home/upload">
+                                            <img id="blah" src="#" asp-append-version="true" />
+                                            <input type="file" name="file" />
+                                            <input type="submit" class="btn btn-primary btn-sm">                                            
+                                            
+
+                                            <input asp-for=@carReg.Car />
+                                            
+                                            
+                                            <label asp-for="ImageFile" class="control-label"></label>
+                                            <input type="hidden" asp-for="CarRegistrationImageUrl" />
+                                            <input asp-for="ImageFile" id="imgInp" />
+                                            <span asp-validation-for="ImageFile" class="text-danger"></span>
+                                        </form>*@
+
+                                        
+                                        
+
+
                                     </div>
                                 </div>
                             </div>
@@ -205,7 +227,7 @@
                             </div>
                         </div>
                         <div class="tab-pane" id="carLocation">
-                            Push your carLocation image here
+                            Thông tin về định vị xe
                         </div>
                         <!--<div class="tab-pane" id="activity">-->
                         <!-- Post -->
